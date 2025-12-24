@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <!--
@@ -930,39 +931,6 @@
       transform: scale(1.05);
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      /* background: linear-gradient(to bottom, transparent, #fafafa); */
-      /* Removed fade for cleaner grid edge, or keep if preferred */
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    #hero-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero-layout,
-    .hero h1,
-    .hero p,
-    .hero .kicker,
-    .hero .row,
-    .hero .hero-meta-grid {
-      position: relative;
-      z-index: 1;
-    }
-
     .artifact-caption {
       position: absolute;
       bottom: 0;
@@ -1084,7 +1052,6 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero">
-      <canvas id="hero-canvas"></canvas>
       <div class="container hero-layout">
         <div>
           <div class="kicker">Student Portfolio</div>
@@ -1371,16 +1338,14 @@
                 <p style="font-size: 0.8rem; margin: 0 0 12px; color: var(--muted);">
                   Slides and materials I created for the event.
                 </p>
-                <a href="https://viharibattula.github.io/Middle-School-Math-Bowl/" target="_blank"
-                  class="btn btn--quiet"
-                  style="font-size: 0.8rem; width: 100%; justify-content: center; display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
+               <a href="https://viharibattula.github.io/Middle-School-Math-Bowl/" target="_blank" class="btn btn--quiet"
+   style="font-size: 0.8rem; width: 100%; justify-content: center; display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
 
-                  <img src="MSMB.png" alt="Middle School Math Bowl Slides"
-                    style="max-width: 100%; height: auto; margin-bottom: 5px;">
+    <img src="MSMB.png" alt="Middle School Math Bowl Slides" style="max-width: 100%; height: auto; margin-bottom: 5px;">
 
-                  <span>View on GitHub ↗</span>
+    <span>View on GitHub ↗</span>
 
-                </a>
+</a>
 
                 <!-- 
                    To embed slides instead, replace the button above with your iframe code:
@@ -1793,7 +1758,6 @@
       animatedEls.forEach((el) => observer.observe(el));
     });
   </script>
-  <script src="js/math-animation.js"></script>
 </body>
 
 </html>
