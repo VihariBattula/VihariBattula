@@ -580,15 +580,23 @@
     }
 
     .hero-avatar {
-      width: 96px;
-      height: 96px;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 32px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255, 255, 255, 0.9);
+      overflow: hidden;
+      border: 4px solid #fff;
       box-shadow: var(--shadow-2);
-      margin-bottom: 14px;
-      background-color: #ddd;
-      /* Fallback color */
+      position: relative;
+      z-index: 1;
+      background: #eee;
+    }
+
+    .hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .hero-layout {
@@ -1018,16 +1026,10 @@
   <a href="#main" class="skip">Skip to content</a>
 
   <!-- HEADER (branded) -->
-  <header class="site-header" role="banner">
-    <div class="container nav">
-      <a class="brand" href="#">
-        <!-- Initial VB for Vihari Battula -->
-        <span class="brand-badge">VB</span>
-        <span class="brand-title">
-          <span class="t1">Vihari Battula</span>
-          <span class="t2">Math &amp; STEM Portfolio</span>
-          <span class="t3">Academic Portfolio</span>
-        </span>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="#" class="brand">
+        <span class="brand-text" style="font-size: 1.1rem;">Academic Portfolio</span>
       </a>
 
       <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"
@@ -1342,7 +1344,7 @@
               <div class="media-links">
                 <h4 style="margin: 0 0 6px; font-size: 0.9rem;">Competition Slides</h4>
                 <p style="font-size: 0.8rem; margin: 0 0 12px; color: var(--muted);">
-                  Slides and materials I created for the event. The slides are designed to award points if you wish to give a team point similar to jeapoardy. There are multiple rounds with challenging questions for middle schoolers. There are options for changing points such as, reset, double points, and swap.
+                  Slides and materials I created for the event.
                 </p>
                 <a href="https://viharibattula.github.io/Middle-School-Math-Bowl/" target="_blank"
                   class="btn btn--quiet"
