@@ -880,20 +880,27 @@
 
     .resource-card:hover {
       transform: translateY(-2px);
-      border-color: var(--navy);
+      border-color: #aaa;
     }
 
-    .resource-icon {
+    .resource-card img {
+      width: 70px;
+      height: 105px;
+      /* 2:3 aspect ratio */
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: var(--shadow-1);
       flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      background: var(--stat-bg-2);
-      color: var(--navy);
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      font-weight: bold;
-      font-size: 1.2rem;
+      background: #eee;
+    }
+
+    .resource-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      /* Prevent flex overflow */
     }
 
     /* 2. Visual Artifacts (Notes Gallery) */
@@ -1243,13 +1250,13 @@
         <div class="grid-2">
           <!-- Book 1 -->
           <a href="#" class="resource-card fade-in-up">
-            <div class="resource-icon">📖</div>
-            <div>
+            <img src="ETB.png" alt="Everything is Tuberculosis">
+            <div class="resource-info">
               <h3 style="font-size: 1rem; margin: 0 0 4px">Everything is Tuberculosis</h3>
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 John Green
               </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:var(--navy); font-weight:700">
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
                 Status: Recently Studied
               </div>
             </div>
@@ -1257,13 +1264,13 @@
 
           <!-- Book 2 -->
           <a href="#" class="resource-card fade-in-up">
-            <div class="resource-icon">📚</div>
-            <div>
+            <img src="TFA.png" alt="Things Fall Apart">
+            <div class="resource-info">
               <h3 style="font-size: 1rem; margin: 0 0 4px">Things Fall Apart</h3>
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 Chinua Achebe
               </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:var(--navy); font-weight:700">
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
                 Status: Recently Studied
               </div>
             </div>
@@ -1271,13 +1278,13 @@
 
           <!-- Book 3 -->
           <a href="#" class="resource-card fade-in-up">
-            <div class="resource-icon">🏝️</div>
-            <div>
+            <img src="LOTF.png" alt="Lord of the Flies">
+            <div class="resource-info">
               <h3 style="font-size: 1rem; margin: 0 0 4px">Lord of the Flies</h3>
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 William Golding
               </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:var(--navy); font-weight:700">
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
                 Status: Recently Studied
               </div>
             </div>
@@ -1285,13 +1292,13 @@
 
           <!-- Book 4 -->
           <a href="#" class="resource-card fade-in-up">
-            <div class="resource-icon">🎭</div>
-            <div>
+            <img src="Antigone.png" alt="Antigone">
+            <div class="resource-info">
               <h3 style="font-size: 1rem; margin: 0 0 4px">Antigone</h3>
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 Sophocles
               </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:var(--green); font-weight:700">
+              <div style="margin-top:8px; font-size:0.75rem; color:#444; font-weight:700">
                 Status: Upcoming (Next Semester)
               </div>
             </div>
@@ -1337,14 +1344,16 @@
                 <p style="font-size: 0.8rem; margin: 0 0 12px; color: var(--muted);">
                   Slides and materials I created for the event.
                 </p>
-               <a href="https://viharibattula.github.io/Middle-School-Math-Bowl/" target="_blank" class="btn btn--quiet"
-   style="font-size: 0.8rem; width: 100%; justify-content: center; display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
+                <a href="https://viharibattula.github.io/Middle-School-Math-Bowl/" target="_blank"
+                  class="btn btn--quiet"
+                  style="font-size: 0.8rem; width: 100%; justify-content: center; display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
 
-    <img src="MSMB.png" alt="Middle School Math Bowl Slides" style="max-width: 100%; height: auto; margin-bottom: 5px;">
+                  <img src="MSMB.png" alt="Middle School Math Bowl Slides"
+                    style="max-width: 100%; height: auto; margin-bottom: 5px;">
 
-    <span>View on GitHub ↗</span>
+                  <span>View on GitHub ↗</span>
 
-</a>
+                </a>
 
                 <!-- 
                    To embed slides instead, replace the button above with your iframe code:
