@@ -559,26 +559,10 @@
     /* Hero section customized for student portfolio */
     .hero {
       position: relative;
-      padding: 120px 0 80px;
-      text-align: center;
-      background-color: #fafafa;
-      /* Visible Graph Paper Grid (Checkered effect) */
-      background-image:
-        linear-gradient(to right, #e2e8f0 1px, transparent 1px),
-        linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      /* background: linear-gradient(to bottom, transparent, #fafafa); */
-      /* Removed fade for cleaner grid edge, or keep if preferred */
-      pointer-events: none;
+      overflow: hidden;
+      background: var(--bg);
+      padding: 60px 0 60px;
+      border-bottom: 1px solid var(--border);
     }
 
     .hero .kicker {
@@ -596,25 +580,15 @@
     }
 
     .hero-avatar {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 32px;
+      width: 96px;
+      height: 96px;
       border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid #fff;
-      box-shadow: var(--shadow-2);
-      position: relative;
-      z-index: 1;
-      background: #eee;
-    }
-
-    .hero-avatar img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
-      display: block;
-      -webkit-user-select: none;
-      user-select: none;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-2);
+      margin-bottom: 14px;
+      background-color: #ddd;
+      /* Fallback color */
     }
 
     .hero-layout {
@@ -906,27 +880,20 @@
 
     .resource-card:hover {
       transform: translateY(-2px);
-      border-color: #aaa;
+      border-color: var(--navy);
     }
 
-    .resource-card img {
-      width: 70px;
-      height: 105px;
-      /* 2:3 aspect ratio */
-      object-fit: cover;
-      border-radius: 4px;
-      box-shadow: var(--shadow-1);
+    .resource-icon {
       flex-shrink: 0;
-      background: #eee;
-    }
-
-    .resource-info {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 0;
-      /* Prevent flex overflow */
+      width: 40px;
+      height: 40px;
+      background: var(--stat-bg-2);
+      color: var(--navy);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
 
     /* 2. Visual Artifacts (Notes Gallery) */
@@ -961,6 +928,39 @@
 
     .artifact-thumb:hover img {
       transform: scale(1.05);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      /* background: linear-gradient(to bottom, transparent, #fafafa); */
+      /* Removed fade for cleaner grid edge, or keep if preferred */
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-layout,
+    .hero h1,
+    .hero p,
+    .hero .kicker,
+    .hero .row,
+    .hero .hero-meta-grid {
+      position: relative;
+      z-index: 1;
     }
 
     .artifact-caption {
@@ -1044,12 +1044,15 @@
   <a href="#main" class="skip">Skip to content</a>
 
   <!-- HEADER (branded) -->
-  <header class="site-header">
-    <div class="header-inner container">
-      <a href="#" class="brand">
-        <span class="brand-text"
-          style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 2px; border-bottom: 2px solid #000;">
-          Academic Portfolio
+  <header class="site-header" role="banner">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <!-- Initial VB for Vihari Battula -->
+        <span class="brand-badge">VB</span>
+        <span class="brand-title">
+          <span class="t1">Vihari Battula</span>
+          <span class="t2">Math &amp; STEM Portfolio</span>
+          <span class="t3">Academic Portfolio</span>
         </span>
       </a>
 
@@ -1081,6 +1084,7 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero">
+      <canvas id="hero-canvas"></canvas>
       <div class="container hero-layout">
         <div>
           <div class="kicker">Student Portfolio</div>
@@ -1088,7 +1092,9 @@
           <img src="vihari.png" alt="Portrait of Vihari Battula" class="hero-avatar" />
           <h1>Vihari Battula</h1>
           <p class="lead">
-            This portfolio tracks my academic progress and my commitment to thinking critically in STEM. Beyond the classroom, I enjoy the process of working through challenges and developing leadership skills that contribute to a positive and productive environment.
+            I am a high school student who enjoys being competitive but not aggressive.
+            I enjoy thinking creatively and outside the box, and this portfolio tracks
+            my growth in mathematics, science, and leadership.
           </p>
 
           <div class="row" style="margin-top: 18px">
@@ -1160,7 +1166,7 @@
               without losing sight of collaboration and respect.
             </p>
             <p>
-              My academic interests span across STEM and World History.
+              My academic interests span across Mathematics, Physics, and World History.
               Outside of the classroom, I enjoy leadership roles where I can help organize
               events and encourage others to find joy in STEM subjects.
             </p>
@@ -1180,9 +1186,12 @@
             </ul>
             <div class="quote-box fade-in-up">
               <div class="quote-text">
-                "What sets Vihari apart is his focus and pace—he absorbs new ideas rapidly and translates them into polished, meaningful artifacts."
+                "Vihari brings a unique creative perspective to every problem."
               </div>
-              <div class="quote-author">Prof. Vinay Kodipelly </div>
+              <div class="quote-author">Teacher / Mentor</div>
+              <div class="quote-role">
+                (Placeholder for testimonial)
+              </div>
             </div>
           </aside>
         </div>
@@ -1268,13 +1277,13 @@
         <div class="grid-2">
           <!-- Book 1 -->
           <a href="#" class="resource-card fade-in-up">
-            <img src="ETB.png" alt="Everything is Tuberculosis">
-            <div class="resource-info">
+            <div class="resource-icon">📖</div>
+            <div>
               <h3 style="font-size: 1rem; margin: 0 0 4px">Everything is Tuberculosis</h3>
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 John Green
               </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--navy); font-weight:700">
                 Status: Recently Studied
               </div>
             </div>
@@ -1282,13 +1291,13 @@
 
           <!-- Book 2 -->
           <a href="#" class="resource-card fade-in-up">
-            <img src="TFA.png" alt="Things Fall Apart">
-            <div class="resource-info">
+            <div class="resource-icon">📚</div>
+            <div>
               <h3 style="font-size: 1rem; margin: 0 0 4px">Things Fall Apart</h3>
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 Chinua Achebe
               </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--navy); font-weight:700">
                 Status: Recently Studied
               </div>
             </div>
@@ -1296,13 +1305,13 @@
 
           <!-- Book 3 -->
           <a href="#" class="resource-card fade-in-up">
-            <img src="LOTF.png" alt="Lord of the Flies">
-            <div class="resource-info">
+            <div class="resource-icon">🏝️</div>
+            <div>
               <h3 style="font-size: 1rem; margin: 0 0 4px">Lord of the Flies</h3>
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 William Golding
               </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--navy); font-weight:700">
                 Status: Recently Studied
               </div>
             </div>
@@ -1310,13 +1319,13 @@
 
           <!-- Book 4 -->
           <a href="#" class="resource-card fade-in-up">
-            <img src="Antigone.png" alt="Antigone">
-            <div class="resource-info">
+            <div class="resource-icon">🎭</div>
+            <div>
               <h3 style="font-size: 1rem; margin: 0 0 4px">Antigone</h3>
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 Sophocles
               </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:#444; font-weight:700">
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--green); font-weight:700">
                 Status: Upcoming (Next Semester)
               </div>
             </div>
@@ -1784,6 +1793,7 @@
       animatedEls.forEach((el) => observer.observe(el));
     });
   </script>
+  <script src="js/math-animation.js"></script>
 </body>
 
 </html>
