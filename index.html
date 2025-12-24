@@ -963,6 +963,28 @@
       transform: scale(1.05);
     }
 
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Ensure content is above canvas */
+    .hero-layout,
+    .hero h1,
+    .hero p,
+    .hero .kicker,
+    .hero .row,
+    .hero .hero-meta-grid,
+    .hero-avatar {
+      position: relative;
+      z-index: 1;
+    }
+
     .artifact-caption {
       position: absolute;
       bottom: 0;
@@ -1081,6 +1103,7 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero">
+      <canvas id="hero-canvas"></canvas>
       <div class="container hero-layout">
         <div>
           <div class="kicker">Student Portfolio</div>
@@ -1127,7 +1150,7 @@
         <aside class="surface" style="padding: 18px">
           <h3>Current Goals</h3>
           <ul class="list">
-            <li>Excel in STEM coursework.</li>
+            <li>Excel in Integrated Math and Physics coursework.</li>
             <li>Develop strong leadership skills through event making and competitions.</li>
             <li>Prepare for college-level reading and analysis.</li>
           </ul>
@@ -1162,7 +1185,7 @@
               without losing sight of collaboration and respect.
             </p>
             <p>
-              My academic interests span across STEM and World History.
+              My academic interests span across Mathematics, Physics, and World History.
               Outside of the classroom, I enjoy leadership roles where I can help organize
               events and encourage others to find joy in STEM subjects.
             </p>
@@ -1788,6 +1811,7 @@
       animatedEls.forEach((el) => observer.observe(el));
     });
   </script>
+  <script src="js/math-animation.js"></script>
 </body>
 
 </html>
