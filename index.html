@@ -559,10 +559,26 @@
     /* Hero section customized for student portfolio */
     .hero {
       position: relative;
-      overflow: hidden;
-      background: var(--bg);
-      padding: 60px 0 60px;
-      border-bottom: 1px solid var(--border);
+      padding: 120px 0 80px;
+      text-align: center;
+      background-color: #fafafa;
+      /* Visible Graph Paper Grid (Checkered effect) */
+      background-image:
+        linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+        linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      /* background: linear-gradient(to bottom, transparent, #fafafa); */
+      /* Removed fade for cleaner grid edge, or keep if preferred */
+      pointer-events: none;
     }
 
     .hero .kicker {
@@ -597,6 +613,8 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .hero-layout {
@@ -1029,7 +1047,10 @@
   <header class="site-header">
     <div class="header-inner container">
       <a href="#" class="brand">
-        <span class="brand-text" style="font-size: 1.1rem;">Academic Portfolio</span>
+        <span class="brand-text"
+          style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 2px; border-bottom: 2px solid #000;">
+          Academic Portfolio
+        </span>
       </a>
 
       <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"
