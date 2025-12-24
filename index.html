@@ -784,34 +784,38 @@
     }
 
     /* Split Card Layout (Custom Addition) */
+    /* Split Card Layout (Custom Addition) */
     .project-card.split-card {
       padding: 0 !important;
-      /* Override default card padding */
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      border: 1px solid var(--border);
     }
 
     .split-content {
-      padding: 16px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      border-bottom: 1px solid var(--border);
     }
 
-    .split-image {
-      position: relative;
-      width: 100%;
-      height: 250px;
-      /* Mobile height constraint */
-      background: #f0f0f0;
+    .split-image-container {
+      display: flex;
+      flex-direction: column;
+      background: #fafafa;
     }
 
-    .split-image img {
+    .split-image-container img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .media-links {
+      padding: 20px;
     }
 
     @media (min-width: 800px) {
@@ -821,22 +825,16 @@
       }
 
       .split-content {
-        flex: 1;
+        flex: 1.2;
         padding: 32px;
+        border-bottom: 0;
+        border-right: 1px solid var(--border);
       }
 
-      .split-image {
-        flex: 1;
-        height: auto;
-        /* Full height on desktop */
-        min-height: 100%;
-      }
-
-      .split-image img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
+      .split-image-container {
+        flex: 0.8;
+        border-left: 0;
+        justify-content: flex-start;
       }
     }
 
@@ -1039,6 +1037,8 @@
         <a href="#about">About</a>
         <a href="#academics">Academics</a>
         <a href="#projects">Projects & Events</a>
+        <a href="#athletics">Athletics</a>
+        <a href="#volunteering">Volunteering</a>
         <a href="#leadership">Leadership</a>
         <a href="#notes">Notes</a>
         <a href="#exams">Exams</a>
@@ -1104,7 +1104,7 @@
 
           <h3 style="margin-top: 16px">Quick Highlights</h3>
           <ul class="list">
-            <li>Co-Team Lead for the Middle School Math Bowl.</li>
+            <li>Student Leader for the Middle School Math Bowl.</li>
             <li>Studying diverse literature from "Things Fall Apart" to "Antigone".</li>
             <li>Building this digital portfolio to track my work.</li>
           </ul>
@@ -1316,20 +1316,41 @@
             <div class="split-content">
               <div class="project-header-row">
                 <h3 class="project-title">Middle School Math Bowl</h3>
-                <span class="project-badge">Co-Team Lead</span>
+                <span class="project-badge">Student Leader</span>
               </div>
               <div class="project-meta">Math Competition · Grades 6-8</div>
               <p class="project-body">
                 The Middle School Math Bowl was an exciting and challenging competition for middle school students.
-                As a Co-Team Lead, I helped organize and guide the team through complex problems,
+                As a student leader, I helped organize and guide the team through complex problems,
                 fostering a competitive yet supportive environment.
               </p>
               <div class="project-footer">
                 <span>Skills: Leadership, Math Strategy, Organization</span>
               </div>
             </div>
-            <div class="split-image">
+            <div class="split-image-container">
               <img src="mb-photo.png" alt="Math Bowl Competition" />
+
+              <!-- Presentation / Slides Section -->
+              <div class="media-links">
+                <h4 style="margin: 0 0 6px; font-size: 0.9rem;">Competition Slides</h4>
+                <p style="font-size: 0.8rem; margin: 0 0 12px; color: var(--muted);">
+                  Slides and materials I created for the event.
+                </p>
+               <a href="https://github.com/YOUR_USERNAME/YOUR_REPO_NAME" target="_blank" class="btn btn--quiet"
+   style="font-size: 0.8rem; width: 100%; justify-content: center; display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
+
+    <img src="MSMB.png" alt="Middle School Math Bowl Slides" style="max-width: 100%; height: auto; margin-bottom: 5px;">
+
+    <span>View on GitHub ↗</span>
+
+</a>
+
+                <!-- 
+                   To embed slides instead, replace the button above with your iframe code:
+                   <iframe src="YOUR_SLIDES_LINK/embed..." width="100%" height="200" border="0"></iframe>
+                 -->
+              </div>
             </div>
           </article>
 
@@ -1351,6 +1372,80 @@
       </div>
     </section>
 
+    <!-- ATHLETICS (SQUASH) -->
+    <section id="athletics" class="section section--bg-card">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Athletics</div>
+          <h2>Squash</h2>
+          <p>
+            Dedication, discipline, and competitive spirit on the court.
+          </p>
+        </div>
+        <article class="project-card fade-in-up">
+          <div class="project-header-row">
+            <h3 class="project-title">Competitive Squash</h3>
+            <span class="project-badge">Athlete</span>
+          </div>
+          <div class="project-meta">Training & Competitions</div>
+          <p class="project-body">
+            Squash has taught me the importance of agility, strategy, and mental endurance.
+            I am committed to consistent training and improving my game with every match.
+          </p>
+          <!-- Squash Image -->
+          <div class="split-image" style="margin-top: 20px; min-height: 350px;">
+            <img src="SquashNationals.jpg" alt="Squash Nationals Tournament"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- VOLUNTEERING -->
+    <section id="volunteering" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Service</div>
+          <h2>Volunteering & Internships</h2>
+          <p>
+            Contributing to the community and gaining real-world experience.
+          </p>
+        </div>
+        <article class="card fade-in-up">
+          <h3>Service Record</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Organization / Activity</th>
+                  <th>Role</th>
+                  <th>Hours / Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Butterfly House</td>
+                  <td>Volunteer</td>
+                  <td>100+ Hours</td>
+                </tr>
+                <tr>
+                  <td>Family Forward</td>
+                  <td>Volunteer</td>
+                  <td>2 Hours</td>
+                </tr>
+                <tr>
+                  <td>Jewish Family Services</td>
+                  <td>Volunteer</td>
+                  <td>2 Hours</td>
+                </tr>
+                <!-- Add more rows here -->
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- LEADERSHIP & SERVICE -->
     <section id="leadership" class="section section--bg-card">
       <div class="container">
@@ -1368,7 +1463,7 @@
             <div class="timeline">
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-title">Math Bowl Co-Team Lead</div>
+                <div class="timeline-title">Math Bowl Student Leader</div>
                 <div class="timeline-meta">School / Organization</div>
                 <div class="timeline-body">
                   Led a team of middle schoolers in a math competition, ensuring everyone participated
@@ -1517,7 +1612,7 @@
               <div class="timeline-title">Middle School Math Bowl Leadership</div>
               <div class="timeline-meta">2024</div>
               <div class="timeline-body">
-                Took on the role of Co-Team Lead, helping organize and run the competition.
+                Took on the role of Student Leader, helping organize and run the competition.
               </div>
             </div>
 
