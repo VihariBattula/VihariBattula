@@ -7,38 +7,41 @@
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     let width, height;
     let particles = [];
+    let animationFrameId;
 
     // Configuration
-    const particleCount = 50; // Increased count for "a lot of symbols"
+    const particleCount = 40; // Balanced for performance
     const symbols = [
         // Math
-        'π', '∑', '∫', '≠', '≈', '√', '∞', '0', '1', '2', '3', 'θ', 'λ', 'Δ', '±', '÷',
+        'π', '∑', '∫', '∞', '√', 'θ', 'λ', 'Δ', '±', 'α', 'β', 'γ',
         // Tech / Coding
-        '</>', '{}', '[]', '()', '=>', ';', '#', 'var', 'let', 'const', 'if', 'npm', 'git', 'ssh', 'src', 'bin'
+        '</>', '{}', '[]', '=>', ';', '#', 'git', 'npm', 'js', 'py', 'css', 'html'
     ];
-    const colors = ['rgba(0, 0, 0, 0.08)', 'rgba(0, 0, 0, 0.12)', 'rgba(40, 40, 40, 0.1)']; // Slightly more visible but still subtle
-    const speedBase = 0.6; // Slightly faster for more energy
+    const colors = [
+        'rgba(0, 0, 0, 0.05)',
+        'rgba(0, 0, 0, 0.08)',
+        'rgba(64, 64, 64, 0.06)'
+    ];
+    const speedBase = 0.5;
 
     class Particle {
         constructor() {
-            this.reset();
-            // Randomize initial position to fill the screen
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
+            this.reset(true);
         }
 
-        reset() {
+        reset(initial = false) {
             this.x = Math.random() * width;
-            this.y = height + 50; // Start just below screen
-            this.speed = (Math.random() * 0.6 + 0.3) * speedBase;
-            this.size = Math.random() * 18 + 12; // Font size between 12px and 30px
+            this.y = initial ? (Math.random() * height) : (height + 50);
+            this.speed = (Math.random() * 0.5 + 0.2) * speedBase;
+            this.size = Math.random() * 14 + 10; // Slightly smaller and cleaner
             this.symbol = symbols[Math.floor(Math.random() * symbols.length)];
             this.color = colors[Math.floor(Math.random() * colors.length)];
             this.rotation = Math.random() * Math.PI * 2;
-            this.rotationSpeed = (Math.random() - 0.5) * 0.04; // Slightly more rotation
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.opacity = Math.random() * 0.5 + 0.2; // Variable opacity for depth
         }
 
         update() {
@@ -54,11 +57,9 @@
             ctx.save();
             ctx.translate(this.x, this.y);
             ctx.rotate(this.rotation);
+            ctx.globalAlpha = this.opacity;
             ctx.fillStyle = this.color;
-
-            // Use monospace for code feel, standard sans for math often looks better or just mix
-            ctx.font = `700 ${this.size}px "Consolas", "Monaco", "Inter", monospace`;
-
+            ctx.font = `800 ${this.size}px "Inter", "Consolas", monospace`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.fillText(this.symbol, 0, 0);
@@ -73,36 +74,56 @@
             height = parent.clientHeight;
             canvas.width = width;
             canvas.height = height;
+
+            // Re-initialize particles on major resize to fill new area
+            init();
         }
     }
 
     function init() {
-        resize();
         particles = [];
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
-        loop();
     }
 
     function loop() {
         // Respect reduced motion
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (prefersReducedMotion) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            ctx.clearRect(0, 0, width, height);
+            return;
+        }
 
         ctx.clearRect(0, 0, width, height);
         particles.forEach(p => {
             p.update();
             p.draw();
         });
-        requestAnimationFrame(loop);
+        animationFrameId = requestAnimationFrame(loop);
     }
 
+    // Debounced resize
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        resize();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            resize();
+            loop();
+        }, 200);
+    });
+
+    // Handle visibility change to save resources
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        } else {
+            loop();
+        }
     });
 
     // Start
-    init();
+    resize();
+    loop();
 
 })();
