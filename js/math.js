@@ -21,9 +21,9 @@
         '</>', '{}', '[]', '=>', ';', '#', 'git', 'npm', 'js', 'py', 'css', 'html'
     ];
     const colors = [
-       'rgba(0, 0, 0, 0.35)',  // Much more visible
-        'rgba(0, 0, 0, 0.45)',  // Much more visible
-        'rgba(64, 64, 64, 0.40)' // Much more visible
+        'rgba(41, 98, 255, 0.6)',   // Blue - clearly visible
+        'rgba(16, 185, 129, 0.6)',  // Green - clearly visible  
+        'rgba(139, 92, 246, 0.6)'   // Purple - clearly visible
     ];
     const speedBase = 0.5;
 
@@ -36,7 +36,7 @@
             this.x = Math.random() * width;
             this.y = initial ? (Math.random() * height) : (height + 50);
             this.speed = (Math.random() * 0.5 + 0.2) * speedBase;
-            this.size = Math.random() * 14 + 10; // Slightly smaller and cleaner
+            this.size = Math.random() * 20 + 16; // BIGGER symbols (was 14 + 10)
             this.symbol = symbols[Math.floor(Math.random() * symbols.length)];
             this.color = colors[Math.floor(Math.random() * colors.length)];
             this.rotation = Math.random() * Math.PI * 2;
@@ -88,12 +88,7 @@
     }
 
     function loop() {
-        // Respect reduced motion
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            ctx.clearRect(0, 0, width, height);
-            return;
-        }
-
+        // Animation now always runs
         ctx.clearRect(0, 0, width, height);
         particles.forEach(p => {
             p.update();
