@@ -21,9 +21,9 @@
         '</>', '{}', '[]', '=>', ';', '#', 'git', 'npm', 'js', 'py', 'css', 'html'
     ];
     const colors = [
-      'rgba(0, 0, 0, 0.15)',
-'rgba(0, 0, 0, 0.25)',
-'rgba(64, 64, 64, 0.18)'
+       'rgba(0, 0, 0, 0.35)',  // Much more visible
+        'rgba(0, 0, 0, 0.45)',  // Much more visible
+        'rgba(64, 64, 64, 0.40)' // Much more visible
     ];
     const speedBase = 0.5;
 
