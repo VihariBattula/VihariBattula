@@ -197,15 +197,16 @@
       }
     }
 
+
     .section {
-      padding: 48px 0;
+      padding: 29px 0;
       content-visibility: auto;
       contain-intrinsic-size: 1px 900px;
     }
 
     @media (max-width: 600px) {
       .section {
-        padding: 32px 0;
+        padding: 19px 0;
         /* Tighter vertical rhythm on mobile */
       }
     }
@@ -752,16 +753,20 @@
       margin-bottom: 18px;
     }
 
+    .section-header h2 {
+      margin: 0;
+    }
+
     .section-header .kicker {
       font: 800 0.78rem var(--font-body);
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--green);
-      margin-bottom: 2px;
+      color: #003d99 !important;
+      margin-bottom: 0px;
     }
 
     .section-header p {
-      margin: 4px 0 0;
+      margin: 0px 0 0;
       font-size: 0.95rem;
       color: var(--muted);
     }
@@ -1122,6 +1127,14 @@
     .hero-link-card:hover .hero-meta-value {
       text-decoration: underline;
       color: var(--green);
+    }
+
+    .kicker:not(.hero .kicker) {
+      color: #003d99 !important;
+    }
+    
+    .section-header .kicker {
+      color: #003d99 !important;
     }
   </style>
 
@@ -1565,19 +1578,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Butterfly House</td>
+                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">Butterfly House</span></td>
                   <td>Volunteer</td>
-                  <td>100+ Hours</td>
+                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">100+ Hours</span></td>
                 </tr>
                 <tr>
-                  <td>Family Forward</td>
+                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">Family Forward</span></td>
                   <td>Volunteer</td>
-                  <td>2 Hours</td>
+                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">2 Hours</span></td>
                 </tr>
                 <tr>
-                  <td>Jewish Family Services</td>
+                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">Jewish Family Services</span></td>
                   <td>Volunteer</td>
-                  <td>2 Hours</td>
+                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">2 Hours</span></td>
                 </tr>
                 <!-- Add more rows here -->
               </tbody>
@@ -1665,7 +1678,7 @@
                 <div class="timeline-item">
                   <div class="timeline-dot"></div>
                   <div class="timeline-title">Math Bowl Leadership</div>
-                  <div class="timeline-meta">2025</div>
+                  <div class="timeline-meta">November 2025</div>
                   <div class="timeline-body">
                     Took on the role of Student Leader, helping organize and run the competition.
                   </div>
@@ -1674,9 +1687,18 @@
                 <div class="timeline-item">
                   <div class="timeline-dot"></div>
                   <div class="timeline-title">Portfolio Launch</div>
-                  <div class="timeline-meta">Present</div>
+                  <div class="timeline-meta">December 30th 2025</div>
                   <div class="timeline-body">
                     Launched this digital portfolio to track academic and extracurricular progress.
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Webpage for my Dad</div>
+                  <div class="timeline-meta">Present</div>
+                  <div class="timeline-body">
+                    Building a website for my Dad's work.
                   </div>
                 </div>
               </div>
@@ -1754,7 +1776,7 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">Contact</div>
-          <h2>Contact & Profiles</h2>
+          <h2>Profiles</h2>
           <p>
             Get in touch for academic or collaborative opportunities.
           </p>
