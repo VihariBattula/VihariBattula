@@ -10,13 +10,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Vihari Battula — Academic Portfolio</title>
+  <title>Vihari Battula</title>
 
   <!-- Basic SEO -->
   <meta name="description"
     content="Academic and STEM portfolio for Vihari Battula, a 9th-grade student at MICDS, showcasing coursework, projects, and growth." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Vihari Battula — Academic Portfolio" />
+  <meta property="og:title" content="Vihari Battula" />
   <meta property="og:description"
     content="Academic portfolio showcasing mathematics coursework, STEM projects, and leadership." />
   <meta property="og:image" content="images/social-preview.jpg" />
@@ -295,13 +295,27 @@
     /* Header / Nav */
     .site-header {
       position: sticky;
-      top: 0;
+      top: 0px;
       z-index: 50;
       border-bottom: 1px solid var(--border);
       box-shadow: var(--shadow-1);
       background: rgba(255, 255, 255, 0.95);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 24px !important;
+      min-height: 56px;
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        padding: 8px 16px !important;
+      }
     }
 
     .nav {
@@ -1136,8 +1150,9 @@
     <div class="header-inner container">
       <a href="#" class="brand">
         <span class="brand-text"
-          style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 2px; border-bottom: 2px solid #000;">
-          Academic Portfolio
+          style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.1; display: block; white-space: nowrap;">
+          Vihari Battula<br>
+          <span style="display: block; width: 100%; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.0px;">Academic Portfolio</span>
         </span>
       </a>
 
