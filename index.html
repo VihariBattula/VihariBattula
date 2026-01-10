@@ -10,13 +10,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Vihari Battula</title>
+  <title>Vihari Battula — Academic Portfolio</title>
 
   <!-- Basic SEO -->
   <meta name="description"
     content="Academic and STEM portfolio for Vihari Battula, a 9th-grade student at MICDS, showcasing coursework, projects, and growth." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Vihari Battula" />
+  <meta property="og:title" content="Vihari Battula — Academic Portfolio" />
   <meta property="og:description"
     content="Academic portfolio showcasing mathematics coursework, STEM projects, and leadership." />
   <meta property="og:image" content="images/social-preview.jpg" />
@@ -197,16 +197,15 @@
       }
     }
 
-
     .section {
-      padding: 29px 0;
+      padding: 48px 0;
       content-visibility: auto;
       contain-intrinsic-size: 1px 900px;
     }
 
     @media (max-width: 600px) {
       .section {
-        padding: 19px 0;
+        padding: 32px 0;
         /* Tighter vertical rhythm on mobile */
       }
     }
@@ -296,27 +295,13 @@
     /* Header / Nav */
     .site-header {
       position: sticky;
-      top: 0px;
+      top: 0;
       z-index: 50;
       border-bottom: 1px solid var(--border);
       box-shadow: var(--shadow-1);
       background: rgba(255, 255, 255, 0.95);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 8px 24px !important;
-      min-height: 56px;
-    }
-
-    @media (max-width: 600px) {
-      .header-inner {
-        padding: 8px 16px !important;
-      }
     }
 
     .nav {
@@ -753,20 +738,16 @@
       margin-bottom: 18px;
     }
 
-    .section-header h2 {
-      margin: 0;
-    }
-
     .section-header .kicker {
       font: 800 0.78rem var(--font-body);
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #003d99 !important;
-      margin-bottom: 0px;
+      color: var(--green);
+      margin-bottom: 2px;
     }
 
     .section-header p {
-      margin: 0px 0 0;
+      margin: 4px 0 0;
       font-size: 0.95rem;
       color: var(--muted);
     }
@@ -1056,7 +1037,15 @@
       transform: scale(1.05);
     }
 
-
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
 
     /* Ensure content is above canvas */
     .hero-layout,
@@ -1128,14 +1117,6 @@
       text-decoration: underline;
       color: var(--green);
     }
-
-    .kicker:not(.hero .kicker) {
-      color: #003d99 !important;
-    }
-    
-    .section-header .kicker {
-      color: #003d99 !important;
-    }
   </style>
 
   <!-- Structured data -->
@@ -1163,9 +1144,8 @@
     <div class="header-inner container">
       <a href="#" class="brand">
         <span class="brand-text"
-          style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.1; display: block; white-space: nowrap;">
-          Vihari Battula<br>
-          <span style="display: block; width: 100%; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.0px;">Academic Portfolio</span>
+          style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 2px; border-bottom: 2px solid #000;">
+          Academic Portfolio
         </span>
       </a>
 
@@ -1186,7 +1166,9 @@
         <a href="#athletics">Athletics</a>
         <a href="#volunteering">Volunteering</a>
         <a href="#leadership">Leadership</a>
-        <a href="#progress">Progress</a>
+        <a href="#notes">Notes</a>
+        <a href="#exams">Exams</a>
+        <a href="#timeline">Timeline</a>
         <a href="#contact" class="btn btn--secondary">Contact</a>
       </nav>
     </div>
@@ -1195,7 +1177,7 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero">
-
+      <canvas id="hero-canvas"></canvas>
       <div class="container hero-layout">
         <div>
           <div class="kicker">Student Portfolio</div>
@@ -1519,6 +1501,7 @@
       </div>
     </section>
 
+    <!-- ATHLETICS (SQUASH) -->
     <section id="athletics" class="section section--bg-card">
       <div class="container">
         <div class="section-header">
@@ -1528,28 +1511,25 @@
             Dedication, discipline, and competitive spirit on the court.
           </p>
         </div>
-        <article class="project-card fade-in-up split-card">
-          <div class="split-content">
-            <div class="project-header-row">
-              <h3 class="project-title">Competitive Squash</h3>
-              <span class="project-badge">Athlete</span>
-            </div>
-            <div class="project-meta">Training & Competitions</div>
-            <p class="project-body">
-              Squash has taught me the importance of agility, strategy, and mental endurance.
-              I am committed to consistent training and improving my game with every match.
-              Participating in national tournaments like Squash Nationals has pushed me to maintain a high level of
-              focus under pressure.
-            </p>
-            <div class="row--tight" style="margin-top: 16px">
-              <span class="chip" data-variant="tag">Dedication</span>
-              <span class="chip" data-variant="tag">Discipline</span>
-              <span class="chip" data-variant="tag">Competitive</span>
-            </div>
+        <article class="project-card fade-in-up">
+          <div class="project-header-row">
+            <h3 class="project-title">Competitive Squash</h3>
+            <span class="project-badge">Athlete</span>
           </div>
-          <div class="split-image-container" style="flex: 0.7;">
+          <div class="project-meta">Training & Competitions</div>
+          <p class="project-body">
+            Squash has taught me the importance of agility, strategy, and mental endurance.
+            I am committed to consistent training and improving my game with every match.
+          </p>
+          <div class="row--tight" style="margin-top: 12px">
+            <span class="chip" data-variant="tag">Dedication</span>
+            <span class="chip" data-variant="tag">Discipline</span>
+            <span class="chip" data-variant="tag">Competitive</span>
+          </div>
+          <!-- Squash Image -->
+          <div class="split-image" style="margin-top: 20px; min-height: 350px;">
             <img src="SquashNationals.jpg" alt="Squash Nationals Tournament"
-              style="width: 100%; height: 100%; object-fit: cover;" />
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;">
           </div>
         </article>
       </div>
@@ -1578,19 +1558,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">Butterfly House</span></td>
+                  <td>Butterfly House</td>
                   <td>Volunteer</td>
-                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">100+ Hours</span></td>
+                  <td>100+ Hours</td>
                 </tr>
                 <tr>
-                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">Family Forward</span></td>
+                  <td>Family Forward</td>
                   <td>Volunteer</td>
-                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">2 Hours</span></td>
+                  <td>2 Hours</td>
                 </tr>
                 <tr>
-                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">Jewish Family Services</span></td>
+                  <td>Jewish Family Services</td>
                   <td>Volunteer</td>
-                  <td><span style="background: rgba(0, 61, 153, 0.15); color: #003d99; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: inline-block;">2 Hours</span></td>
+                  <td>2 Hours</td>
                 </tr>
                 <!-- Add more rows here -->
               </tbody>
@@ -1649,125 +1629,137 @@
       </div>
     </section>
 
-    <!-- PROGRESS (CONSOLIDATED: NOTES, EXAMS, TIMELINE) -->
-    <section id="progress" class="section">
+    <!-- NOTES / LEARNING ARTIFACTS -->
+    <section id="notes" class="section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Journey & Results</div>
-          <h2>Growth & Progress</h2>
+          <div class="kicker">Notes & Work</div>
+          <h2>Selected Notes & Learning Artifacts</h2>
           <p>
-            Tracking my academic milestones, learning artifacts, and evolution over time.
+            Evidence of how I work and organize my thoughts.
           </p>
         </div>
 
-        <div class="split">
-          <!-- Left: Timeline of Growth -->
-          <aside>
-            <div class="card fade-in-up" style="height: 100%">
-              <h3>Growth Timeline</h3>
-              <div class="timeline">
-                <div class="timeline-item">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-title">Started 9th Grade at MICDS</div>
-                  <div class="timeline-meta">August 2025</div>
-                  <div class="timeline-body">
-                    Began high school with a focus on Integrated Math, Physics, and History.
-                  </div>
-                </div>
+        <div class="grid-2">
+          <article class="card fade-in-up">
+            <h3>Artifact Gallery</h3>
+            <p style="margin-bottom:12px">Snapshots of my notes and summaries.</p>
 
-                <div class="timeline-item">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-title">Math Bowl Leadership</div>
-                  <div class="timeline-meta">November 2025</div>
-                  <div class="timeline-body">
-                    Took on the role of Student Leader, helping organize and run the competition.
-                  </div>
-                </div>
+            <div class="artifact-grid">
+              <div class="artifact-thumb">
+                <img src="Screenshot 2026-01-10 174257.png" alt="Math Notes" />
+                <div class="artifact-caption">Proofs Notes</div>
+              </div>
 
-                <div class="timeline-item">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-title">Portfolio Launch</div>
-                  <div class="timeline-meta">December 30th 2025</div>
-                  <div class="timeline-body">
-                    Launched this digital portfolio to track academic and extracurricular progress.
-                  </div>
-                </div>
+              <div class="artifact-thumb">
+                <img src="HistoryEssayPort.png" alt="History Essay" />
+                <div class="artifact-caption">History Paper</div>
+              </div>
 
-                <div class="timeline-item">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-title">Webpage for my Dad</div>
-                  <div class="timeline-meta">Present</div>
-                  <div class="timeline-body">
-                    Building a website for my Dad's work.
-                  </div>
-                </div>
+              <div class="artifact-thumb">
+                <img src="Infographicport.png" alt="Physics Lab" />
+                <div class="artifact-caption">Catapult Infographic</div>
               </div>
             </div>
+          </article>
+
+          <aside class="card fade-in-up">
+            <h3>Methodology</h3>
+            <p>
+              I use this section to store digital copies of my best work, ensuring I can track my improvement over the
+              academic year.
+            </p>
+            <ul class="list">
+              <li><strong>Structure:</strong> Organized notes for easy review.</li>
+              <li><strong>Reflection:</strong> Looking back at past essays to improve writing style.</li>
+              <li><strong>Consistency:</strong> Regular updates to my portfolio.</li>
+            </ul>
           </aside>
-
-          <!-- Right: Artifacts & Benchmarks -->
-          <div style="display: flex; flex-direction: column; gap: 24px;">
-            <!-- Learning Artifacts -->
-            <article class="card fade-in-up">
-              <h3>Selected Notes & Artifacts</h3>
-              <p style="margin-bottom:16px; font-size: 0.9rem;">Direct evidence of my learning process and analytical
-                writing.</p>
-
-              <div class="artifact-grid">
-                <div class="artifact-thumb">
-                  <img src="MathNotesPort.png" alt="Math Notes" />
-                  <div class="artifact-caption">Proofs Notes</div>
-                </div>
-
-                <div class="artifact-thumb">
-                  <img src="HistoryEssayPort.png" alt="History Essay" />
-                  <div class="artifact-caption">History Paper</div>
-                </div>
-
-                <div class="artifact-thumb">
-                  <img src="Infographicport.png" alt="Physics Lab" />
-                  <div class="artifact-caption">Catapult Infographic</div>
-                </div>
-              </div>
-
-              <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border);">
-                <h4 style="font-size: 0.95rem; margin-bottom: 8px;">Methodology</h4>
-                <p style="font-size: 0.9rem; color: var(--muted);">
-                  I document my best work to track improvement. My focus is on structured organization,
-                  regular reflections on writing style, and maintaining consistent progress.
-                </p>
-              </div>
-            </article>
-
-            <!-- Academic Benchmarks -->
-            <article class="card fade-in-up">
-              <h3>Key Assessments</h3>
-              <div class="table-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Exam / Test</th>
-                      <th>Date</th>
-                      <th>Reflection</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Math Bowl Participation</td>
-                      <td>2025</td>
-                      <td>Great experience in timed problem solving and team management.</td>
-                    </tr>
-                    <tr>
-                      <td>Semester 1 Finals</td>
-                      <td>Dec 2025</td>
-                      <td>Focus on synthesizing history themes and math concepts.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </article>
-          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- EXAMS & BENCHMARKS -->
+    <section id="exams" class="section section--bg-card">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Exams & Benchmarks</div>
+          <h2>Key Assessments & Progress</h2>
+          <p>
+            A simple record of important milestones.
+          </p>
+        </div>
+
+        <article class="card fade-in-up">
+          <h3>Selected Assessments</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Exam / Test</th>
+                  <th>Date</th>
+                  <th>Reflection</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Math Bowl Participation</td>
+                  <td>2025</td>
+                  <td>Great experience in timed problem solving and team management.</td>
+                </tr>
+                <tr>
+                  <td>Semester 1 Finals</td>
+                  <td>Dec 2025</td>
+                  <td>Focus on synthesizing history themes and math concepts.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Timeline</div>
+          <h2>Timeline of Growth</h2>
+          <p>
+            Major turning points in my learning journey so far.
+          </p>
+        </div>
+
+        <article class="card fade-in-up">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Started 9th Grade at MICDS</div>
+              <div class="timeline-meta">August 2025</div>
+              <div class="timeline-body">
+                Began high school with a focus on Integrated Math, Physics, and History.
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Middle School Math Bowl Leadership</div>
+              <div class="timeline-meta">2025</div>
+              <div class="timeline-body">
+                Took on the role of Student Leader, helping organize and run the competition.
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Portfolio Launch</div>
+              <div class="timeline-meta">Present</div>
+              <div class="timeline-body">
+                Launched this digital portfolio to track academic and extracurricular progress.
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1776,7 +1768,7 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">Contact</div>
-          <h2>Profiles</h2>
+          <h2>Contact & Profiles</h2>
           <p>
             Get in touch for academic or collaborative opportunities.
           </p>
@@ -1796,7 +1788,7 @@
           </article>
 
           <aside class="card fade-in-up">
-            <h3>Portfolio Info</h3>
+            <h3>Notes</h3>
             <p>
               This portfolio is for academic purposes. This portfolio was built to help track all my events and
               achievements throughout high school.
@@ -1909,7 +1901,7 @@
       animatedEls.forEach((el) => observer.observe(el));
     });
   </script>
-
+  <script src="js/math.js"></script>
 </body>
 
 </html>
