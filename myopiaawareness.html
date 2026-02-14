@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  Article Page Template (Editorial Feature) mimic for Vihari Battula's Portfolio
+  Supported by Active Learning Institute (ActiveSTEM.org)
+-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>Myopia in the Digital Age — Vihari Battula</title>
+
+    <!-- Basic SEO -->
+    <meta name="description"
+        content="Research article on Myopia in the Digital Age: A Public Health Perspective on Adolescent Risk Factors, by Vihari Battula." />
+    <meta name="author" content="Vihari Battula" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Fonts: Playfair Display (Headings) & Source Serif Pro (Body) for that "Journal" feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            /* Palette: Professional Navy & Sky Blue (User requested #60b5ff) */
+            --primary: #0f172a;
+            /* Deep Navy (slate-900) for professionalism/contrast */
+            --primary-dark: #020617;
+            --accent: #60b5ff;
+            /* User's custom blue */
+
+            --bg-body: #FDFBF7;
+            /* Warm paper tone retained */
+            --bg-surface: #FFFFFF;
+
+            --text-main: #1e293b;
+            /* Slate-800 */
+            --text-muted: #475569;
+            /* Slate-600 */
+            --border: #cbd5e1;
+
+            --font-heading: "Playfair Display", serif;
+            --font-body: "Source Serif Pro", serif;
+            --font-ui: "Lato", sans-serif;
+
+            --container: 1200px;
+            --content-width: 740px;
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            /* Larger, more readable type */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            margin-top: 0;
+            line-height: 1.25;
+        }
+
+        /* --- Navigation Bar --- */
+        .site-nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            font-family: var(--font-ui);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            margin-left: 24px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Hero Header --- */
+        .article-hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 80px 24px 100px;
+            /* Large padding for drama */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle texture overlay for hero */
+        .article-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .kicker {
+            font-family: var(--font-ui);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            /* Massive editorial title */
+            color: white;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-family: var(--font-ui);
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .meta-bar {
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .meta-bar strong {
+            color: white;
+        }
+
+        /* --- Main Layout --- */
+        .layout-wrapper {
+            max-width: var(--container);
+            margin: -60px auto 0;
+            /* Overlap the hero */
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            /* Content + Sidebar (slightly wider for charts) */
+            gap: 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Content Column */
+        .article-body {
+            background: white;
+            padding: 60px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            font-size: 1.2rem;
+        }
+
+        /* Typography Tweaks */
+        .article-body p {
+            margin-bottom: 24px;
+        }
+
+        .article-body h2 {
+            font-size: 2rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-ui);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 30px;
+            color: var(--text-muted);
+        }
+
+        /* Drop Cap */
+        .drop-cap::first-letter {
+            float: left;
+            font-family: var(--font-heading);
+            font-size: 5.5rem;
+            line-height: 0.8;
+            font-weight: 700;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--primary);
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--primary);
+            margin: 50px 0;
+            padding: 0 40px;
+            line-height: 1.4;
+            border-left: none;
+            position: relative;
+        }
+
+        .pull-quote::before {
+            content: "“";
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Case Study Box */
+        .case-study {
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-radius: var(--radius);
+            padding: 24px 30px;
+            margin: 30px 0;
+            font-family: var(--font-ui);
+        }
+
+        .case-study h4 {
+            color: #166534;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .risk-tag {
+            background: #DC2626;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        .safe-tag {
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            padding-top: 60px;
+            /* Align visually with text start */
+        }
+
+        .widget {
+            background: white;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+        }
+
+        .widget h3 {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
+        .toc-link {
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        .toc-link:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        /* Stats Widget */
+        .stat-box {
+            margin-bottom: 18px;
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* Tag Cloud */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f3f4f6;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: var(--font-ui);
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #111827;
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+            margin-top: 100px;
+            font-family: var(--font-ui);
+        }
+
+        .footer-links a {
+            color: var(--accent);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .layout-wrapper {
+                grid-template-columns: 1fr;
+                margin-top: 0;
+            }
+
+            .article-body {
+                padding: 30px 20px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">V. Battula</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#academics">Academics</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="article-hero">
+        <div class="hero-content">
+            <span class="kicker">Public Health Perspective</span>
+            <h1>Myopia in the Digital Age: A Crisis for the Connected Generation</h1>
+            <p class="subtitle">An exploration of Opthamology, screen dependency, and why raising awareness about daily
+                eye strain could prevent irreversible damage.</p>
+
+            <div class="meta-bar">
+                <span>By <strong>Vihari Battula</strong></span>
+                <span>•</span>
+                <span>Research Context</span>
+                <span>•</span>
+                <span>ActiveSTEM.org</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <div class="layout-wrapper">
+
+        <!-- LEFT: Article Content -->
+        <main class="article-body">
+
+            <!-- Intro with Drop Cap -->
+            <p class="drop-cap">
+                My experience with myopia has been defined by the constant, subtle pressure of frames against my
+                temples—a
+                perpetual reminder of a barrier between myself and the world. Many describe corrective lenses as a
+                simple
+                tool, but for those of us who rely on them daily, they can feel like a foreign object. Contact lenses,
+                often touted as the invisible alternative, present their own challenges, directly pressing onto the eye
+                and requiring a level of desensitization that not everyone can master.
+            </p>
+
+            <!-- Myopia Awareness Image -->
+            <figure style="margin: 40px 0; text-align: center;">
+                <img src="MyopiaAwareness.png" alt="Myopia Awareness: A visual representation of eye strain"
+                    style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <figcaption
+                    style="margin-top: 10px; font-family: var(--font-ui); font-style: italic; color: var(--text-muted); font-size: 0.9rem;">
+                    Visualizing the impact of daily digital strain.
+                </figcaption>
+            </figure>
+
+            <p>
+                The rapid deterioration of eyesight, particularly myopia (nearsightedness), often occurs during the
+                critical developmental windows of childhood and adolescence. My own journey mirrors a common narrative
+                in
+                the digital age: a childhood prioritized around screens—gaming, binge-watching television—at the expense
+                of ocular health.
+            </p>
+
+            <div class="pull-quote">
+                “We wouldn't drive a car without checking the engine, so why do we push our eyes to the limit without
+                rest?”
+            </div>
+
+            <h2 id="epidemic">The "Normalized" Strain</h2>
+            <p>
+                We live in an era where digital dependency is not just common; it is required. From educational tools to
+                social connection, removing screens entirely is not a pragmatic solution. However, the <em>abuse</em> of
+                screens—using them for elongated periods without breaks—is the catalyst for damage.
+            </p>
+            <p>
+                As a child, I dismissed the warnings of my parents. I ignored the <strong>20-20-20 rule</strong> (look
+                at
+                something 20 feet away for 20 seconds every 20 minutes) and the deterioration was swift. It is a
+                misconception that eye strain alone causes myopia; rather, it is the <em>habitual signaling</em> to the
+                eye to elongate in response to constant near-work demand. Even if screen usage remains constant later in
+                life, the damage done during developmental years is often exponential and irreversible.
+            </p>
+
+            <h2 id="surgery">The Surgical Myth: LASIK is Not a "Reset"</h2>
+            <p>
+                Many adolescents view refractive surgery, such as LASIK, as a guaranteed "cure-all" waiting for them in
+                adulthood. This is a dangerous fallacy. Refractive surgery is not a simple reset button; it is a complex
+                medical procedure with strict biological limitations.
+            </p>
+            <p>
+                <strong>The Age Factor:</strong> While technically approved for adults over 18, most ethical surgeons
+                heavily recommend waiting until the mid-twenties (ages 23–25). Why? The eye must be refractively stable.
+                Operating on an eye that is still changing is futile, as the myopia can progress post-surgery.
+            </p>
+            <p>
+                <strong>The "One-Shot" Reality:</strong> There is a common belief that one can simply get LASIK "touched
+                up" repeatedly. In reality, LASIK involves slicing a thin flap of the cornea and ablating the tissue
+                underneath. Corneal thickness is a finite resource. Once that tissue is removed, it does not grow back.
+                While enhancements are possible in some cases, the eye cannot be structurally comprised indefinitely.
+                For
+                many, LASIK is a one-time opportunity, and managing your eye health <em>before</em> surgery is crucial
+                to
+                being a candidate at all.
+            </p>
+
+            <h2 id="lifestyle">Lifestyle & Nutrition: The Hidden Link</h2>
+            <p>
+                Beyond screens, our physiological choices play a pivotal role. The "Western Diet"—high in processed
+                foods, refined carbohydrates, and sugars—has been linked to the acceleration of myopia.
+            </p>
+            <p>
+                High-glycemic diets can spike insulin levels, which may lead to an increase in insulin-like growth
+                factor-1 (IGF-1). This hormone can signal the eye to grow axially (elongate), worsening nearsightedness.
+                If you believe your vision is stable at -2.00 diopters, consider the functional difference of -4.00 or
+                -6.00. At higher prescriptions, the world without glasses is not just blurry; it is unrecognizable.
+                Faces fade, items blend into surroundings, and functional independence is lost. Preserving your vision
+                at its current stage is not just about avoiding thicker glasses—it is about maintaining quality of life.
+            </p>
+
+            <h2 id="prevention">Prevention & Protection</h2>
+            <p>
+                While we cannot reverse time, we can mitigate future damage. The solution is not to reject technology,
+                but to respect biology.
+            </p>
+
+            <!-- Case Study / Checklist Box -->
+            <div class="case-study">
+                <h4>Defending Your Vision: The 20-20-20 Rule</h4>
+                <p style="margin-bottom: 16px; font-size: 0.95rem;">
+                    A simple strategy recommended by optometry professionals to combat digital eye strain.
+                </p>
+                <div class="case-study-grid">
+                    <div>
+                        <strong>The Problem:</strong><br>
+                        • Fixed Focus Distance<br>
+                        • Reduced Blink Rate<br>
+                        • Blue Light Exposure
+                    </div>
+                    <div>
+                        <strong>The Solution:</strong><br>
+                        • Every <strong>20 Minutes</strong> <span class="safe-tag">Action</span><br>
+                        • Look <strong>20 Feet</strong> Away <span class="safe-tag">Action</span><br>
+                        • For <strong>20 Seconds</strong> <span class="safe-tag">Action</span>
+                    </div>
+                </div>
+                <p style="margin-top: 16px; font-size: 0.95rem; margin-bottom: 0;">
+                    <strong>Result:</strong> This relaxes the ciliary muscle inside the eye and reduces fatigue.
+                </p>
+            </div>
+
+            <h2 id="conclusion">Conclusion</h2>
+            <p>
+                Myopia is more than an inconvenience; it is a cumulative record of our daily choices. Whether it
+                represents
+                dietary habits, screen hygiene, or genetic predisposition, understanding the mechanics of our eyes
+                empowers
+                us to protect them. Do not wait for a surgical miracle that may not be applicable to you. Protect the
+                sight
+                you have today.
+            </p>
+
+        </main>
+
+        <!-- RIGHT: Sidebar -->
+        <aside class="sidebar">
+
+            <!-- Table of Contents -->
+            <div class="widget">
+                <h3>Contents</h3>
+                <nav>
+                    <a href="#epidemic" class="toc-link">The "Normalized" Strain</a>
+                    <a href="#surgery" class="toc-link">The Surgical Myth</a>
+                    <a href="#lifestyle" class="toc-link">Lifestyle & Nutrition</a>
+                    <a href="#prevention" class="toc-link">Prevention Strategies</a>
+                    <a href="#conclusion" class="toc-link">Conclusion</a>
+                </nav>
+            </div>
+
+            <!-- Key Stats -->
+            <div class="widget">
+                <h3>Key Statistics</h3>
+                <div class="stat-box">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">Projected global population with Myopia by 2050.</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">20-20-20</div>
+                    <div class="stat-label">The Golden Rule for eye strain prevention.</div>
+                </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="widget">
+                <h3>Topics</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">Opthamology</a>
+                    <a href="#" class="tag">Digital Health</a>
+                    <a href="#" class="tag">Screen Time</a>
+                    <a href="#" class="tag">Wellness</a>
+                    <a href="#" class="tag">Adolescent Health</a>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="nav-inner">
+            <div style="margin: 0 auto;">
+                <p>&copy; 2026 Vihari Battula. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Return to Portfolio</a>
+                    <a href="#">Back to Top</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
