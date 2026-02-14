@@ -28,28 +28,31 @@
         :root {
             /* Palette: Professional Navy & Sky Blue (User requested #60b5ff) */
             --primary: #0f172a;
-            /* Deep Navy (slate-900) for professionalism/contrast */
+            /* Deep Navy (slate-900) */
             --primary-dark: #020617;
             --accent: #60b5ff;
-            /* User's custom blue */
+            /* Sky Blue */
 
-            --bg-body: #FDFBF7;
-            /* Warm paper tone retained */
+            /* Backgrounds: Cleaner, less "warm paper", more "document" */
+            --bg-body: #f8fafc;
+            /* Very light slate/grey */
             --bg-surface: #FFFFFF;
 
-            --text-main: #1e293b;
-            /* Slate-800 */
+            --text-main: #0f172a;
+            /* Darker, sharper text */
             --text-muted: #475569;
-            /* Slate-600 */
             --border: #cbd5e1;
 
+            /* Fonts: Professional Serif & Sans */
             --font-heading: "Playfair Display", serif;
             --font-body: "Source Serif Pro", serif;
             --font-ui: "Lato", sans-serif;
 
-            --container: 1200px;
-            --content-width: 740px;
-            --radius: 8px;
+            --container: 1100px;
+            /* Slightly tighter container */
+            --content-width: 700px;
+            --radius: 0px;
+            /* Sharp corners for academic look */
         }
 
         * {
@@ -62,9 +65,10 @@
             color: var(--text-main);
             font-family: var(--font-body);
             font-weight: 400;
-            line-height: 1.8;
-            font-size: 1.15rem;
-            /* Larger, more readable type */
+            line-height: 1.6;
+            /* Denser, academic line height */
+            font-size: 1.05rem;
+            /* Standard readable size */
         }
 
         h1,
@@ -74,14 +78,15 @@
             font-family: var(--font-heading);
             color: var(--text-main);
             margin-top: 0;
-            line-height: 1.25;
+            line-height: 1.3;
         }
 
         /* --- Navigation Bar --- */
         .site-nav {
             background: #fff;
-            border-bottom: 1px solid var(--border);
-            padding: 16px 0;
+            border-bottom: 2px solid var(--primary);
+            /* Sturdier border */
+            padding: 12px 0;
             font-family: var(--font-ui);
             position: sticky;
             top: 0;
@@ -99,19 +104,21 @@
 
         .nav-logo {
             font-weight: 900;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--primary);
             text-decoration: none;
-            letter-spacing: -0.02em;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .nav-links a {
             margin-left: 24px;
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             transition: color 0.2s;
         }
 
@@ -119,123 +126,112 @@
             color: var(--primary);
         }
 
-        /* --- Hero Header --- */
+        /* --- Hero Header (Journal Style) --- */
         .article-hero {
-            background-color: var(--primary);
-            color: white;
-            padding: 80px 24px 100px;
-            /* Large padding for drama */
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Subtle texture overlay for hero */
-        .article-hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-            pointer-events: none;
+            background-color: #fff;
+            /* White background for formal look */
+            color: var(--text-main);
+            padding: 60px 24px 40px;
+            text-align: left;
+            /* Left align like a paper */
+            border-bottom: 1px solid var(--border);
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: var(--container);
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         .kicker {
             font-family: var(--font-ui);
-            font-weight: 900;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            display: inline-block;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: block;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            /* Massive editorial title */
-            color: white;
-            margin-bottom: 24px;
+            font-size: 2.8rem;
+            /* Controlled size */
+            color: var(--primary);
+            margin-bottom: 16px;
             font-weight: 700;
+            max-width: 800px;
         }
 
         .subtitle {
-            font-family: var(--font-ui);
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 300;
-            line-height: 1.5;
-            margin-bottom: 30px;
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 24px;
+            max-width: 700px;
         }
 
         .meta-bar {
             font-family: var(--font-ui);
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            color: var(--text-muted);
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            gap: 24px;
             align-items: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 16px;
+            width: 100%;
         }
 
         .meta-bar strong {
-            color: white;
+            color: var(--primary);
         }
 
         /* --- Main Layout --- */
         .layout-wrapper {
             max-width: var(--container);
-            margin: -60px auto 0;
-            /* Overlap the hero */
+            margin: 40px auto 60px;
             padding: 0 24px;
             display: grid;
-            grid-template-columns: 1fr 340px;
-            /* Content + Sidebar (slightly wider for charts) */
+            grid-template-columns: 1fr 300px;
+            /* Sidebar slightly narrower */
             gap: 60px;
-            position: relative;
-            z-index: 10;
+            align-items: start;
         }
 
         /* Content Column */
         .article-body {
             background: white;
-            padding: 60px;
-            border-radius: var(--radius);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            font-size: 1.2rem;
+            padding: 40px 0;
+            /* Minimal padding, let it blend */
+            font-size: 1.05rem;
+            text-align: justify;
+            /* Academic justification */
         }
 
         /* Typography Tweaks */
         .article-body p {
-            margin-bottom: 24px;
+            margin-bottom: 1.5em;
         }
 
         .article-body h2 {
-            font-size: 2rem;
-            margin-top: 50px;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 16px;
             color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            padding-bottom: 6px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            display: block;
+            /* Full width border */
         }
 
         .article-body h3 {
-            font-family: var(--font-ui);
             font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 30px;
-            color: var(--text-muted);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-weight: 700;
         }
 
         /* Drop Cap */
@@ -325,60 +321,60 @@
 
         /* --- Sidebar --- */
         .sidebar {
-            padding-top: 60px;
-            /* Align visually with text start */
+            padding-top: 40px;
+            position: sticky;
+            top: 80px;
         }
 
         .widget {
-            background: white;
-            padding: 24px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            margin-bottom: 24px;
+            margin-bottom: 40px;
         }
 
         .widget h3 {
             font-family: var(--font-ui);
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-top: 0;
-            margin-bottom: 16px;
-            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary);
         }
 
         .toc-link {
             display: block;
-            padding: 8px 0;
-            border-bottom: 1px solid #f3f4f6;
+            padding: 6px 0;
             color: var(--text-muted);
             text-decoration: none;
             font-family: var(--font-ui);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: 0.2s;
         }
 
         .toc-link:hover {
-            color: var(--primary);
-            padding-left: 5px;
+            color: var(--accent);
+            text-decoration: underline;
         }
 
         /* Stats Widget */
         .stat-box {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f1f5f9;
         }
 
         .stat-number {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
+            font-family: var(--font-ui);
+            font-size: 1.5rem;
             font-weight: 900;
-            color: var(--accent);
+            color: var(--primary);
             line-height: 1;
         }
 
         .stat-label {
             font-family: var(--font-ui);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             margin-top: 4px;
             line-height: 1.4;
@@ -410,34 +406,30 @@
 
         /* Footer */
         .site-footer {
-            background: #111827;
-            color: white;
-            padding: 80px 0 40px;
+            background: #fff;
+            color: var(--text-muted);
+            padding: 40px 0;
             text-align: center;
-            margin-top: 100px;
+            border-top: 1px solid var(--border);
+            margin-top: 80px;
             font-family: var(--font-ui);
+            font-size: 0.85rem;
         }
 
         .footer-links a {
-            color: var(--accent);
+            color: var(--primary);
             margin: 0 10px;
             text-decoration: none;
+            font-weight: 700;
         }
 
         @media (max-width: 900px) {
             .layout-wrapper {
                 grid-template-columns: 1fr;
-                margin-top: 0;
             }
 
             .article-body {
-                padding: 30px 20px;
-                border-radius: 0;
-                box-shadow: none;
-            }
-
-            h1 {
-                font-size: 2.2rem;
+                text-align: left;
             }
         }
     </style>
@@ -481,8 +473,26 @@
         <!-- LEFT: Article Content -->
         <main class="article-body">
 
-            <!-- Intro with Drop Cap -->
-            <p class="drop-cap">
+            <!-- Abstract -->
+            <div class="abstract-box"
+                style="background: #f1f5f9; padding: 24px; border-left: 4px solid var(--primary); margin-bottom: 40px; font-family: var(--font-ui); font-size: 0.95rem;">
+                <strong
+                    style="display: block; text-transform: uppercase; color: var(--text-muted); font-size: 0.8rem; letter-spacing: 0.05em; margin-bottom: 8px;">Abstract</strong>
+                <p style="margin: 0;">
+                    Myopia (nearsightedness) has reached epidemic proportions in the 21st century, driven by lifestyle
+                    shifts
+                    towards prolonged near-work and digital screen exposure. This article explores the personal and
+                    public health
+                    implications of myopia, debunking common myths surrounding refractive surgery (LASIK) and
+                    highlighting the
+                    critical role of nutrition and behavioral habits in disease progression. By synthesizing personal
+                    narrative
+                    with medical research, we argue for a preventative approach centered on the "20-20-20" rule and
+                    dietary awareness.
+                </p>
+            </div>
+
+            <p>
                 My experience with myopia has been defined by the constant, subtle pressure of frames against my
                 temples—a
                 perpetual reminder of a barrier between myself and the world. Many describe corrective lenses as a
@@ -492,13 +502,15 @@
                 and requiring a level of desensitization that not everyone can master.
             </p>
 
-            <!-- Myopia Awareness Image -->
-            <figure style="margin: 40px 0; text-align: center;">
+            <!-- Myopia Awareness Image (Figure 1) -->
+            <figure
+                style="margin: 32px 0; text-align: center; background: #f8fafc; padding: 16px; border: 1px solid var(--border);">
                 <img src="MyopiaAwareness.png" alt="Myopia Awareness: A visual representation of eye strain"
-                    style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
                 <figcaption
-                    style="margin-top: 10px; font-family: var(--font-ui); font-style: italic; color: var(--text-muted); font-size: 0.9rem;">
-                    Visualizing the impact of daily digital strain.
+                    style="margin-top: 12px; font-family: var(--font-ui); color: var(--text-muted); font-size: 0.85rem; text-align: left;">
+                    <strong>Figure 1.</strong> Visualizing the cumulative impact of daily digital strain on adolescent
+                    vision.
                 </figcaption>
             </figure>
 
@@ -515,7 +527,7 @@
                 rest?”
             </div>
 
-            <h2 id="epidemic">The "Normalized" Strain</h2>
+            <h2 id="epidemic">1. The "Normalized" Strain</h2>
             <p>
                 We live in an era where digital dependency is not just common; it is required. From educational tools to
                 social connection, removing screens entirely is not a pragmatic solution. However, the <em>abuse</em> of
@@ -530,19 +542,21 @@
                 life, the damage done during developmental years is often exponential and irreversible.
             </p>
 
-            <h2 id="surgery">The Surgical Myth: LASIK is Not a "Reset"</h2>
+            <h2 id="surgery">2. The Surgical Myth: LASIK is Not a "Reset"</h2>
             <p>
                 Many adolescents view refractive surgery, such as LASIK, as a guaranteed "cure-all" waiting for them in
                 adulthood. This is a dangerous fallacy. Refractive surgery is not a simple reset button; it is a complex
                 medical procedure with strict biological limitations.
             </p>
             <p>
-                <strong>The Age Factor:</strong> While technically approved for adults over 18, most ethical surgeons
+                <strong>2.1 The Age Factor.</strong> While technically approved for adults over 18, most ethical
+                surgeons
                 heavily recommend waiting until the mid-twenties (ages 23–25). Why? The eye must be refractively stable.
                 Operating on an eye that is still changing is futile, as the myopia can progress post-surgery.
             </p>
             <p>
-                <strong>The "One-Shot" Reality:</strong> There is a common belief that one can simply get LASIK "touched
+                <strong>2.2 The "One-Shot" Reality.</strong> There is a common belief that one can simply get LASIK
+                "touched
                 up" repeatedly. In reality, LASIK involves slicing a thin flap of the cornea and ablating the tissue
                 underneath. Corneal thickness is a finite resource. Once that tissue is removed, it does not grow back.
                 While enhancements are possible in some cases, the eye cannot be structurally comprised indefinitely.
@@ -552,7 +566,7 @@
                 being a candidate at all.
             </p>
 
-            <h2 id="lifestyle">Lifestyle & Nutrition: The Hidden Link</h2>
+            <h2 id="lifestyle">3. Lifestyle & Nutrition: The Hidden Link</h2>
             <p>
                 Beyond screens, our physiological choices play a pivotal role. The "Western Diet"—high in processed
                 foods, refined carbohydrates, and sugars—has been linked to the acceleration of myopia.
@@ -566,38 +580,42 @@
                 at its current stage is not just about avoiding thicker glasses—it is about maintaining quality of life.
             </p>
 
-            <h2 id="prevention">Prevention & Protection</h2>
+            <h2 id="prevention">4. Prevention & Protection</h2>
             <p>
                 While we cannot reverse time, we can mitigate future damage. The solution is not to reject technology,
                 but to respect biology.
             </p>
 
-            <!-- Case Study / Checklist Box -->
-            <div class="case-study">
-                <h4>Defending Your Vision: The 20-20-20 Rule</h4>
-                <p style="margin-bottom: 16px; font-size: 0.95rem;">
-                    A simple strategy recommended by optometry professionals to combat digital eye strain.
-                </p>
-                <div class="case-study-grid">
-                    <div>
-                        <strong>The Problem:</strong><br>
-                        • Fixed Focus Distance<br>
-                        • Reduced Blink Rate<br>
-                        • Blue Light Exposure
+            <!-- Table 1 (Formerly Case Study) -->
+            <div class="table-container" style="margin: 30px 0; font-family: var(--font-ui);">
+                <caption
+                    style="display: block; text-align: left; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Table 1.</strong> The 20-20-20 Protocol for Digital Eye Strain Reduction
+                </caption>
+                <div style="border: 1px solid var(--border); border-radius: 2px; padding: 20px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; font-size: 0.95rem;">
+                        <div>
+                            <strong
+                                style="display: block; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 8px;">Problem</strong>
+                            • Fixed Focus Distance<br>
+                            • Reduced Blink Rate<br>
+                            • Blue Light Exposure
+                        </div>
+                        <div>
+                            <strong
+                                style="display: block; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 8px;">Solution</strong>
+                            • Every <strong>20 Minutes</strong><br>
+                            • Look <strong>20 Feet</strong> Away<br>
+                            • For <strong>20 Seconds</strong>
+                        </div>
                     </div>
-                    <div>
-                        <strong>The Solution:</strong><br>
-                        • Every <strong>20 Minutes</strong> <span class="safe-tag">Action</span><br>
-                        • Look <strong>20 Feet</strong> Away <span class="safe-tag">Action</span><br>
-                        • For <strong>20 Seconds</strong> <span class="safe-tag">Action</span>
-                    </div>
+                    <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
+                        Note: This mechanism relaxes the ciliary muscle inside the eye, reducing accommodative fatigue.
+                    </p>
                 </div>
-                <p style="margin-top: 16px; font-size: 0.95rem; margin-bottom: 0;">
-                    <strong>Result:</strong> This relaxes the ciliary muscle inside the eye and reduces fatigue.
-                </p>
             </div>
 
-            <h2 id="conclusion">Conclusion</h2>
+            <h2 id="conclusion">5. Conclusion</h2>
             <p>
                 Myopia is more than an inconvenience; it is a cumulative record of our daily choices. Whether it
                 represents
@@ -608,6 +626,22 @@
                 you have today.
             </p>
 
+            <!-- References Section -->
+            <div class="references-section"
+                style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem;">
+                <h3 style="margin-bottom: 16px; font-size: 1rem;">References</h3>
+                <ol style="padding-left: 20px; color: var(--text-muted);">
+                    <li style="margin-bottom: 8px;">Holden, B. A., et al. (2016). Global Prevalence of Myopia and High
+                        Myopia and Time Trends from 2000 through 2050. <em>Ophthalmology</em>.</li>
+                    <li style="margin-bottom: 8px;">Cordain, L., et al. (2002). An evolutionary analysis of the
+                        aetiology and pathogenesis of juvenile-onset myopia. <em>Acta Ophthalmologica Scandinavica</em>.
+                    </li>
+                    <li style="margin-bottom: 8px;">American Optometric Association. (n.d.). Computer Vision Syndrome.
+                    </li>
+                    <li>FDA. (2023). LASIK Quality of Life Collaboration Project.</li>
+                </ol>
+            </div>
+
         </main>
 
         <!-- RIGHT: Sidebar -->
@@ -617,36 +651,32 @@
             <div class="widget">
                 <h3>Contents</h3>
                 <nav>
-                    <a href="#epidemic" class="toc-link">The "Normalized" Strain</a>
-                    <a href="#surgery" class="toc-link">The Surgical Myth</a>
-                    <a href="#lifestyle" class="toc-link">Lifestyle & Nutrition</a>
-                    <a href="#prevention" class="toc-link">Prevention Strategies</a>
-                    <a href="#conclusion" class="toc-link">Conclusion</a>
+                    <a href="#epidemic" class="toc-link">1. The "Normalized" Strain</a>
+                    <a href="#surgery" class="toc-link">2. The Surgical Myth</a>
+                    <a href="#lifestyle" class="toc-link">3. Lifestyle & Nutrition</a>
+                    <a href="#prevention" class="toc-link">4. Prevention strategies</a>
+                    <a href="#conclusion" class="toc-link">5. Conclusion</a>
                 </nav>
             </div>
 
-            <!-- Key Stats -->
+            <!-- Key Findings (Formerly Key Stats) -->
             <div class="widget">
-                <h3>Key Statistics</h3>
+                <h3>Key Findings</h3>
                 <div class="stat-box">
                     <div class="stat-number">50%</div>
-                    <div class="stat-label">Projected global population with Myopia by 2050.</div>
+                    <div class="stat-label">Projected global myopia prevalence by 2050 [1].</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">20-20-20</div>
-                    <div class="stat-label">The Golden Rule for eye strain prevention.</div>
+                    <div class="stat-number">23-25</div>
+                    <div class="stat-label">Recommended age range for refractive stability prior to LASIK.</div>
                 </div>
             </div>
 
-            <!-- Tags -->
+            <!-- Keywords (Formerly Tags) -->
             <div class="widget">
-                <h3>Topics</h3>
-                <div class="tag-cloud">
-                    <a href="#" class="tag">Opthamology</a>
-                    <a href="#" class="tag">Digital Health</a>
-                    <a href="#" class="tag">Screen Time</a>
-                    <a href="#" class="tag">Wellness</a>
-                    <a href="#" class="tag">Adolescent Health</a>
+                <h3>Keywords</h3>
+                <div style="font-family: var(--font-ui); font-size: 0.9rem; line-height: 1.6; color: var(--primary);">
+                    Myopia, Digital Eye Strain, Public Health, Optometry, LASIK, Nutrition, Adolescent Health
                 </div>
             </div>
 
