@@ -10,13 +10,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Vihari Battula — Academic Portfolio</title>
+  <title>Vihari Battula - Academic Portfolio</title>
 
   <!-- Basic SEO -->
   <meta name="description"
     content="Academic and STEM portfolio for Vihari Battula, a 9th-grade student at MICDS, showcasing coursework, projects, and growth." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Vihari Battula — Academic Portfolio" />
+  <meta property="og:title" content="Vihari Battula - Academic Portfolio" />
   <meta property="og:description"
     content="Academic portfolio showcasing mathematics coursework, STEM projects, and leadership." />
   <meta property="og:image" content="images/social-preview.jpg" />
@@ -29,56 +29,112 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800;900&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
     /* =========================================================
-       SECTION 1: DESIGN TOKENS (CSS VARIABLES)
+       DESIGN TOKENS: "MODERN IVY LEAGUE" THEME
+       Deep Forest Green + Copper + Stone
        ========================================================= */
 
     :root {
-      /* 1.1: Colors (Monochrome / Black & White) */
-      --navy: #000000;
-      --green: #404040;
-      /* Dark Grey Accent */
-      --gold: #e5e5e5;
-      /* Light Grey Highlight */
-      --teal-dark: #222;
-      --teal-light: #f5f5f5;
-      --ink: #111;
-      --muted: #555;
-      --bg: #ffffff;
-      --card: #ffffff;
-      --border: #e0e0e0;
+      /* =========================================================
+         PROFESSIONAL ACADEMIC PORTFOLIO - DISTINGUISHED PALETTE
+         Navy Blue (#1E3A8A) + Pure White + Slate Grays
+         Inspired by: Ivy League, Law Firms, Academic CVs
+         ========================================================= */
 
-      /* 1.2: Stat Card Backgrounds (Greyscale) */
-      --stat-bg-1: #fafafa;
-      --stat-bg-2: #f4f4f4;
-      --stat-bg-3: #eeeeee;
-      --stat-bg-4: #e5e5e5;
-      --stat-bg-5: #dddddd;
+      /* Primary Brand Colors */
+      --primary: #1E3A8A;
+      /* Oxford Blue - Main Brand */
+      --primary-dark: #172554;
+      /* Blue 950 - Deep Navy */
+      --primary-light: #3B82F6;
+      /* Blue 500 - Accessible link blue */
 
-      /* 1.3: Typography */
+      /* Background Hierarchy */
+      --bg-body: #FFFFFF;
+      /* Pure White - Main background */
+      --bg-surface: #F8FAFC;
+      /* Slate 50 - Cards, elevated surfaces */
+      --bg-surface-2: #F1F5F9;
+      /* Slate 100 - Alternate sections */
+      --bg-navy: #1E3A8A;
+      /* Navy - Feature sections */
+      --bg-dark: #0F172A;
+      /* Slate 900 - Footer */
+
+      /* Text Colors - High Contrast */
+      --text-main: #0F172A;
+      /* Slate 900 - Primary text */
+      --text-muted: #475569;
+      /* Slate 600 - Secondary text */
+      --text-light: #64748B;
+      /* Slate 500 - Tertiary/captions */
+      --text-on-dark: #FFFFFF;
+      /* White - Text on navy/dark backgrounds */
+      --text-on-navy: #DBEAFE;
+      /* Indigo 100 - Links on navy backgrounds */
+
+      /* Borders - Strengthened */
+      --border: #CBD5E1;
+      /* Slate 300 - More visible primary borders */
+      --border-strong: #94A3B8;
+      /* Slate 400 - Defined boundaries */
+      --border-accent: #1E3A8A;
+      /* Navy - Accent borders */
+
+      /* Accent & Interactive */
+      --accent: #1E3A8A;
+      /* Oxford Blue - Links, CTAs */
+      --accent-hover: #172554;
+      /* Blue 950 - Hover state */
+      --accent-light: #DBEAFE;
+      /* Blue 100 - Light accent bg */
+      --accent-subtle: #F1F5F9;
+      /* Slate 100 - Subtler than pure white for surfaces */
+
+      /* Typography */
+      --font-heading: "Space Grotesk", "Inter", system-ui, sans-serif;
       --font-body: "Inter", system-ui, -apple-system, sans-serif;
-      --font-heading: "Poppins", system-ui, sans-serif;
 
-      /* 1.4: Spacing & Sizing */
-      --s-12: 12px;
-      --s-16: 16px;
+      /* Spacing & Layout */
       --container: 1100px;
-      /* Slightly tighter for cleaner look */
+      --radius: 8px;
+      /* Smaller, more professional */
+      --radius-lg: 12px;
 
-      /* 1.5: Borders & Radii */
-      --r-8: 4px;
-      --r-10: 6px;
-      --r-14: 8px;
-      --r-pill: 999px;
+      /* Shadows - Enhanced for visibility */
+      --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.1);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.12), 0 2px 4px -2px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.15), 0 4px 6px -4px rgba(15, 23, 42, 0.1);
+      --shadow-card: 0 2px 4px rgba(15, 23, 42, 0.1);
+      --shadow-1: var(--shadow-sm);
+      --shadow-2: var(--shadow-md);
+      --shadow-3: var(--shadow-lg);
 
-      /* 1.6: Shadows (Minimal) */
-      --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.05);
-      --shadow-2: 0 2px 5px rgba(0, 0, 0, 0.05);
-      --shadow-3: 0 5px 15px rgba(0, 0, 0, 0.1);
+      /* Legacy Aliases */
+      --navy: var(--text-main);
+      --muted: var(--text-muted);
+      --ink: var(--text-main);
+      --secondary: #64748B;
+      --border-light: var(--border);
+      --primary-glow: transparent;
+      --shadow-glow: none;
+      --card: var(--bg-surface);
+      --accent-dark: var(--primary-dark);
+      --accent-blue: var(--primary-light);
+      --green: var(--primary);
+      --r-8: var(--radius);
+      --r-10: 10px;
+      --r-14: 14px;
+      --s-16: 16px;
+      --stat-bg-1: #dbeafe;
+      --stat-bg-2: #e0ecff;
+      --stat-bg-3: #eff6ff;
+      --stat-bg-4: #f1f5f9;
+      --stat-bg-5: #f8fafc;
     }
 
     /* =========================================================
@@ -91,12 +147,29 @@
         transition: none !important;
         scroll-behavior: auto !important;
       }
+
+      .hero--blueprint-intro::before {
+        opacity: 0.35 !important;
+        transform: none !important;
+      }
+
+      .hero-title-build .hero-letter,
+      .hero--build-active .hero-avatar-wrapper {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        color: #0b1b44 !important;
+      }
+
+      .hero-title-build::after {
+        display: none !important;
+      }
     }
 
     :focus-visible {
-      outline: 3px solid var(--green);
-      outline-offset: 2px;
-      border-radius: 6px;
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
     }
 
     * {
@@ -109,47 +182,104 @@
     }
 
     html {
-      scroll-padding-top: 80px;
-      /* Prevent header overlapping links */
+      scroll-padding-top: 100px;
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--muted);
-      font: 400 1rem/1.6 var(--font-body);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.8;
+      /* Increased line height for readability */
+      font-size: 1.05rem;
+      /* Slightly larger base font */
+      -webkit-font-smoothing: antialiased;
     }
 
     h1,
     h2,
-    h3 {
-      margin: 0.25em 0 0.4em;
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: var(--font-heading);
-      color: var(--navy);
+      color: var(--text-main);
+      margin-top: 0;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     h1 {
-      font-size: clamp(2rem, 3vw + 1rem, 3.25rem);
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      /* Removed heavy text-shadow for light mode cleanliness */
+      margin-bottom: 1.5rem;
     }
 
     h2 {
-      font-size: clamp(1.6rem, 1.2vw + 1rem, 2rem);
-      font-weight: 800;
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+      display: inline-block;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+      margin-top: 0.75rem;
+      border-radius: 2px;
     }
 
     h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5em;
+    }
+
+    p,
+    li {
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--primary);
     }
 
     a {
-      color: var(--navy);
+      color: var(--primary);
       text-decoration: none;
+      transition: all 0.3s;
+      font-weight: 600;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+
+    a:visited {
+      color: var(--primary);
     }
 
     img {
@@ -198,20 +328,22 @@
     }
 
     .section {
-      padding: 48px 0;
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 900px;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border-light);
     }
 
-    @media (max-width: 600px) {
-      .section {
-        padding: 32px 0;
-        /* Tighter vertical rhythm on mobile */
-      }
+    .section:last-child {
+      border-bottom: none;
     }
 
     .section--bg-card {
-      background: var(--card);
+      background: var(--bg-surface);
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        padding: 36px 0;
+      }
     }
 
     .surface {
@@ -223,20 +355,20 @@
 
     .grid-3 {
       display: grid;
-      gap: 20px;
+      gap: 16px;
       grid-template-columns: repeat(3, 1fr);
     }
 
     .grid-2 {
       display: grid;
-      gap: 20px;
+      gap: 16px;
       grid-template-columns: repeat(2, 1fr);
     }
 
     .split {
       display: grid;
-      gap: 24px;
-      grid-template-columns: 360px 1fr;
+      gap: 20px;
+      grid-template-columns: 300px 1fr;
     }
 
     @media (max-width: 900px) {
@@ -273,10 +405,11 @@
       margin: 0 0 8px;
     }
 
+    /* Scroll Animations */
     .fade-in-up {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .fade-in-up.is-visible {
@@ -284,9 +417,42 @@
       transform: translateY(0);
     }
 
-    .fade-in-up.is-visible .stat-card {
-      transition-delay: calc(var(--child-index) * 100ms);
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
+    .slide-in-left.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .slide-in-right.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .scale-in.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* =========================================================
+       SECTION 4: UI COMPONENTS
+       ========================================================= */
 
     /* =========================================================
        SECTION 4: UI COMPONENTS
@@ -294,14 +460,42 @@
 
     /* Header / Nav */
     .site-header {
-      position: sticky;
+      position: fixed;
+      width: 100%;
       top: 0;
-      z-index: 50;
-      border-bottom: 1px solid var(--border);
-      box-shadow: var(--shadow-1);
+      z-index: 1000;
       background: rgba(255, 255, 255, 0.95);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(8px);
+    }
+
+    .site-header.scrolled {
+      padding: 8px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .logo,
+    .nav-link {
+      color: var(--text-main);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .nav {
@@ -309,215 +503,199 @@
       align-items: center;
       gap: 16px;
       padding: 10px 0;
-      min-height: 56px;
     }
 
+    /* Brand / Logo Area */
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 6px 10px 6px 6px;
-      border-radius: 26px;
+      padding: 6px;
+      border-radius: 8px;
       transition: 0.2s;
+      text-decoration: none;
     }
 
     .brand:hover {
-      background: rgba(248, 249, 255, 0.8);
-      box-shadow: 0 3px 10px rgba(26, 35, 126, 0.05);
-      transform: translateY(-1px);
+      background: rgba(0, 0, 0, 0.05);
     }
 
     .brand-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      /* Squircle */
       display: grid;
       place-items: center;
-      background: var(--navy);
-      box-shadow: 0 2px 6px rgba(26, 35, 126, 0.18);
+      background: var(--primary);
+      box-shadow: var(--shadow-sm);
       color: #fff;
-      font: 800 18px var(--font-heading);
+      font: 700 18px var(--font-heading);
     }
 
     .brand-title {
       display: flex;
       flex-direction: column;
-      line-height: 1.05;
+      line-height: 1.1;
     }
 
     .brand-title .t1 {
-      font: 800 1.05rem var(--font-heading);
-      color: var(--navy);
+      font: 700 1.1rem var(--font-heading);
+      color: var(--text-main);
       letter-spacing: -0.01em;
     }
 
     .brand-title .t2 {
-      font: 700 0.85rem var(--font-body);
-      color: var(--navy);
-      opacity: 0.95;
+      font: 500 0.85rem var(--font-body);
+      color: var(--text-muted);
     }
 
     .brand-title .t3 {
-      font: 700 0.7rem var(--font-body);
-      color: var(--green);
-      letter-spacing: 0.03em;
+      display: none;
+      /* Simplify for cleaner look */
     }
 
+    /* Navigation Links */
     .nav-links {
-      margin-left: auto;
       display: flex;
       gap: 8px;
-      align-items: center;
+      /* Use pill background for gap */
+      background: rgba(241, 245, 249, 0.8);
+      /* Subtle pill container */
+      padding: 4px;
+      border-radius: 50px;
+      border: 1px solid var(--border);
     }
 
     .nav-links a {
-      padding: 8px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: capitalize;
+      /* Cleaner than uppercase */
+      letter-spacing: 0.01em;
+      padding: 8px 16px;
       border-radius: 20px;
-      font-weight: 700;
-      transition: 0.2s;
+      transition: all 0.2s ease;
+      border: none;
+      /* Reset base link border */
     }
 
     .nav-links a:hover {
-      background: rgba(76, 175, 80, 0.08);
-      color: var(--green);
+      color: var(--text-main);
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links a:visited {
+      color: var(--text-muted);
+    }
+
+    .nav-links a.active,
+    .nav-links a[aria-current="page"] {
+      background: var(--primary);
+      color: white;
+      box-shadow: var(--shadow-sm);
     }
 
     .menu-toggle {
       display: none;
-      background: transparent;
-      border: 0;
-      color: var(--navy);
-      padding: 4px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
       cursor: pointer;
-      line-height: 1;
-      margin-left: auto;
+      color: var(--text-main);
     }
 
-
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
+        display: none;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
-        top: 56px;
-        /* Starts exactly below header */
-        height: calc(100vh - 56px);
-        /* Forces full height */
-        bottom: 0;
-
-        background: #ffffff;
-        padding: 24px 24px 48px;
-        /* Reduced top padding since we are below header */
-        z-index: 40;
-
-        transform: translateY(-100%);
-        /* Slides in from top */
-        transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.2s;
-        opacity: 0;
-        pointer-events: none;
-
-        overflow-y: auto;
-        border-top: 1px solid var(--border);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-links.show {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-        /* Ensure gap logic is clean */
-        gap: 0;
-      }
-
-      .nav-links a {
-        padding: 16px 0;
-        width: 100%;
-        border-bottom: 1px solid #f0f0f0;
-        font-size: 1.15rem;
-        /* Large readable text */
+        background: var(--bg-surface);
+        flex-direction: column;
+        padding: 24px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+        gap: 10px;
         border-radius: 0;
-        text-align: left;
-        color: var(--navy);
-        display: block;
-        /* Ensure full width clickability */
       }
 
-      .nav-links a:last-child {
-        border-bottom: none;
-        margin-top: 32px;
-        /* Separation for CTA */
-        background: var(--navy);
-        /* High contrast CTA */
-        color: #fff;
+      .nav-links.active {
         display: flex;
-        /* Centering */
-        justify-content: center;
-        align-items: center;
-        padding: 14px;
-        border-radius: 8px;
-        text-align: center;
-        font-weight: 800;
-        box-shadow: var(--shadow-2);
-      }
-
-      .nav-links a:hover {
-        background: transparent;
-        color: var(--green);
-        padding-left: 10px;
-        /* Slight movement on hover */
       }
 
       .menu-toggle {
-        display: grid;
-        place-items: center;
-        width: 44px;
-        height: 44px;
-        margin-right: -8px;
+        display: block;
+      }
+
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
       }
     }
 
-    /* Buttons */
+    /* Buttons - Clean, Professional */
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 10px 16px;
-      border-radius: 28px;
-      border: 2px solid transparent;
-      font: 800 0.9rem var(--font-body);
-      transition: filter 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+      padding: 12px 24px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      border-radius: var(--radius);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
+      /* Align sizes */
+      cursor: pointer;
+      text-decoration: none;
     }
 
+    .btn-primary,
     .btn--primary {
-      background: var(--gold);
-      color: #231700;
-      box-shadow: var(--shadow-1);
+      background-color: var(--accent);
+      color: white;
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    .btn-primary:hover,
     .btn--primary:hover {
-      filter: brightness(0.97);
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
     }
 
-    .btn--secondary {
-      background: var(--green);
-      color: #fff;
-      box-shadow: var(--shadow-1);
-    }
-
-    .btn--secondary:hover {
-      filter: brightness(0.97);
-    }
-
+    .btn-outline,
     .btn--quiet {
-      background: var(--card);
-      color: var(--navy);
-      border-color: var(--navy);
+      border-color: var(--border-light);
+      color: var(--text-light);
+      background: transparent;
     }
 
+    .btn-outline:hover,
     .btn--quiet:hover {
-      background: #f3f6ff;
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-subtle);
+    }
+
+    .btn-secondary,
+    .btn--secondary {
+      background-color: var(--bg-surface-2);
+      color: var(--text-main);
+      border: 1px solid var(--border-light);
+    }
+
+    .btn-secondary:hover,
+    .btn--secondary:hover {
+      background-color: var(--border-light);
+      transform: translateY(-1px);
     }
 
     /* Chips / Pills */
@@ -526,23 +704,31 @@
       align-items: center;
       gap: 8px;
       padding: 6px 12px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--border);
-      background: #f8faff;
-      color: var(--navy);
-      font: 700 0.85rem var(--font-body);
+      border-radius: 50px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-surface-2);
+      color: var(--text-light);
+      font: 600 0.85rem var(--font-body);
+      transition: all 0.2s ease;
     }
 
-    /* Consolidated monochrome chips */
+    .chip:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Professional Chip Variants - Monochrome */
     .chip[data-variant="grade"],
     .chip[data-variant="tag"],
     .chip[data-variant="thematic"] {
-      background: #f4f4f4;
-      border-color: #ddd;
-      color: #333;
+      background: var(--accent-subtle);
+      border-color: var(--border);
+      color: var(--accent);
     }
 
-    /* Lists */
+    /* Lists - High-Precision CSS Markers */
     .list {
       list-style: none;
       padding-left: 0;
@@ -551,32 +737,45 @@
 
     .list li {
       position: relative;
-      padding-left: 18px;
-      margin: 0.35rem 0;
+      padding-left: 1.5rem;
+      margin: 0.6rem 0;
+      color: var(--text-light);
+      line-height: 1.5;
     }
 
     .list li::before {
-      content: "•";
+      content: "";
       position: absolute;
       left: 0;
-      top: 0;
-      color: var(--green);
-      font-weight: 900;
+      top: 0.6em;
+      /* Pixel-perfect vertical centering */
+      width: 6px;
+      height: 6px;
+      background-color: var(--primary);
+      border-radius: 1px;
+      /* Subtle rounding for professional look */
     }
 
-    /* Cards */
+    /* Cards - Bold Borders with High Contrast */
     .card {
-      background: var(--card);
+      background: var(--bg-surface);
+      padding: 32px;
+      border-radius: var(--radius);
       border: 1px solid var(--border);
-      border-radius: var(--r-10);
-      box-shadow: var(--shadow-2);
-      padding: var(--s-16);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow-card);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border-left: 4px solid transparent;
+      /* Persistent accent area */
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-3);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+      border-left-color: var(--primary);
     }
 
     /* Stats grid (if needed later) */
@@ -631,78 +830,96 @@
       line-height: 1.4;
     }
 
-    /* Hero section customized for student portfolio */
+    /* Hero section - Distinguished Oxford Blue Light Palette */
     .hero {
       position: relative;
-      padding: 120px 0 80px;
-      text-align: center;
-      background-color: #fafafa;
-      /* Visible Graph Paper Grid (Checkered effect) */
-      background-image:
-        linear-gradient(to right, #e2e8f0 1px, transparent 1px),
-        linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
-      background-size: 40px 40px;
+      padding: 140px 0 80px;
+      /* Cohesive blue palette match */
+      background: linear-gradient(135deg, #eaf4ff 0%, #cfe4ff 100%);
+      color: var(--text-main);
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
     }
 
-    .hero::after {
+    .hero::before {
       content: "";
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      /* background: linear-gradient(to bottom, transparent, #fafafa); */
-      /* Removed fade for cleaner grid edge, or keep if preferred */
+      inset: 0;
+      background-image: radial-gradient(circle at 2px 2px, var(--border) 1px, transparent 0);
+      background-size: 32px 32px;
+      opacity: 0.3;
       pointer-events: none;
     }
 
-    .hero .kicker {
-      font: 800 0.85rem var(--font-body);
-      color: var(--green);
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .hero p.lead {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.02rem;
-      margin: 0.4rem 0 0;
-    }
-
-    .hero-avatar {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 32px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid #fff;
-      box-shadow: var(--shadow-2);
-      position: relative;
-      z-index: 1;
-      background: #eee;
-    }
-
-    .hero-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      -webkit-user-select: none;
-      user-select: none;
-    }
-
-    .hero-layout {
+    .hero-grid {
       display: grid;
-      gap: 28px;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-      align-items: flex-start;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
     }
 
     @media (max-width: 900px) {
-      .hero-layout {
-        grid-template-columns: 1fr;
+      .hero {
+        padding: 120px 0 60px;
       }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+    }
+
+    .hero-kicker {
+      font-family: var(--font-body);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--text-main);
+    }
+
+    .hero-lead {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .hero-avatar {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 0 auto;
+      border: 6px solid var(--bg-body);
+      box-shadow: var(--shadow-lg);
+      display: block;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-avatar:hover {
+      transform: translateY(-10px) rotate(2deg);
+      border-color: var(--primary);
+    }
+
+    .hero-avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
     }
 
     .hero-meta-grid {
@@ -713,10 +930,19 @@
     }
 
     .hero-meta-card {
-      background: #f8fafc;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
       border-radius: var(--r-8);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(25, 118, 210, 0.2);
       padding: 10px 12px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-meta-card:hover {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: var(--accent-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-2);
     }
 
     .hero-meta-label {
@@ -739,11 +965,14 @@
     }
 
     .section-header .kicker {
-      font: 800 0.78rem var(--font-body);
+      font-family: var(--font-body);
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--green);
-      margin-bottom: 2px;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+      font-size: 0.85rem;
     }
 
     .section-header p {
@@ -752,46 +981,75 @@
       color: var(--muted);
     }
 
-    /* Timeline for growth & leadership */
+    /* Timeline - Fixed Spacing and Alignment */
     .timeline {
-      border-left: 2px solid var(--border);
-      padding-left: 16px;
-      margin: 8px 0 0;
+      padding-left: 32px;
+      /* Dedicated space for line and dots */
+      margin: 20px 0 0;
+      position: relative;
+      list-style: none;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      /* Center under the 14px dot */
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+      border-radius: 2px;
     }
 
     .timeline-item {
       position: relative;
-      padding-left: 4px;
-      margin-bottom: 14px;
+      padding-bottom: 30px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
     }
 
     .timeline-dot {
       position: absolute;
-      left: -21px;
-      top: 4px;
-      width: 11px;
-      height: 11px;
+      left: -32px;
+      /* Move into padding area */
+      top: 6px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
-      background: #000;
-      border: 2px solid #fff;
-      box-shadow: 0 0 0 1px var(--border);
+      background: var(--bg-body);
+      border: 3px solid var(--primary);
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.2);
+      background: var(--primary);
+      box-shadow: 0 0 0 4px var(--accent-light);
     }
 
     .timeline-title {
       font-weight: 700;
-      font-size: 0.98rem;
-      color: var(--ink);
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+      line-height: 1.2;
     }
 
     .timeline-meta {
-      font-size: 0.82rem;
-      color: var(--muted);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
     .timeline-body {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 3px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
     /* Table (exams & coursework) */
@@ -813,14 +1071,51 @@
       border-bottom: 1px solid var(--border);
     }
 
+    .table-wrapper {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-surface);
+    }
+
     th {
+      background: var(--bg-navy);
+      color: var(--text-on-dark);
+      text-align: left;
+      padding: 14px 18px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: none;
       font-weight: 700;
-      color: #64748b;
-      background: #f8fafc;
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 2px solid var(--border);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr {
+      transition: all 0.3s ease;
     }
 
     tbody tr:hover {
-      background: #f9fafb;
+      background: var(--bg-body);
+      transform: translateX(4px);
+      box-shadow: -4px 0 0 var(--accent);
     }
 
     /* Project / event cards */
@@ -831,11 +1126,22 @@
     }
 
     .project-card {
-      border-radius: var(--r-10);
+      border-radius: var(--radius);
       border: 1px solid var(--border);
-      background: #ffffff;
-      box-shadow: var(--shadow-2);
-      padding: 14px 14px 12px;
+      background: var(--bg-surface);
+      box-shadow: var(--shadow-card);
+      padding: 24px;
+      transition: all 0.25s ease;
+      border-left: 3px solid var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+      border-left-color: var(--accent);
     }
 
     .project-header-row {
@@ -852,15 +1158,24 @@
       margin: 0 0 2px;
     }
 
-    .project-badge {
-      font-size: 0.75rem;
+    .project-badge,
+    .badge {
+      display: inline-block;
       padding: 4px 10px;
-      border-radius: 999px;
-      background: #f4f4f4;
-      color: #000;
-      border: 1px solid #ddd;
-      font-weight: 700;
-      white-space: nowrap;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      background: var(--bg-body);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .badge-accent {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      border-color: var(--accent);
     }
 
     .project-meta {
@@ -938,18 +1253,45 @@
       }
     }
 
-    /* Footer (brand kit) */
-    .site-footer {
-      background: #111;
-      color: #fff;
-      padding: 32px 0 26px;
-      border-top: 1px solid #333;
-      margin-top: 40px;
+    /* Footer - Professional Navy */
+    .site-footer,
+    .footer {
+      background: var(--bg-navy);
+      color: var(--text-on-dark);
+      padding: 48px 0;
+      text-align: center;
+      margin-top: 48px;
+      border-top: none;
     }
 
-    .site-footer a {
-      color: #fff;
+    .site-footer a,
+    .footer a {
+      color: var(--text-on-navy);
       text-decoration: underline;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .site-footer a:visited,
+    .footer a:visited {
+      color: var(--text-on-navy);
+    }
+
+    .site-footer a:hover,
+    .footer a:hover {
+      color: var(--text-on-dark);
+      opacity: 0.9;
+    }
+
+    .site-footer p,
+    .site-footer h3,
+    .site-footer h4,
+    .site-footer span,
+    .footer p,
+    .footer h3,
+    .footer h4,
+    .footer span {
+      color: var(--text-on-dark);
     }
 
     .foot-grid {
@@ -1037,15 +1379,7 @@
       transform: scale(1.05);
     }
 
-    #hero-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
+
 
     /* Ensure content is above canvas */
     .hero-layout,
@@ -1063,8 +1397,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      right: 0;
-      background: rgba(26, 35, 126, 0.9);
+      background: linear-gradient(to top, rgba(30, 58, 138, 0.95) 0%, rgba(59, 130, 246, 0.9) 100%);
       color: #fff;
       padding: 8px;
       font-size: 0.75rem;
@@ -1074,11 +1407,20 @@
 
     /* 3. Coach Endorsement Quote */
     .quote-box {
-      background: var(--stat-bg-2);
-      border-left: 4px solid var(--navy);
-      padding: 20px;
-      border-radius: 0 var(--r-10) var(--r-10) 0;
-      margin-top: 24px;
+      background: var(--bg-body);
+      border: 3px solid var(--border);
+      border-left: 5px solid var(--accent);
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      margin-top: 20px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+    }
+
+    .quote-box:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-lg);
+      transform: translateX(4px);
     }
 
     .quote-text {
@@ -1090,8 +1432,9 @@
 
     .quote-author {
       font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--navy);
+      font-weight: 600;
+      color: var(--accent-dark);
+      margin-top: 8px;
     }
 
     .quote-role {
@@ -1107,15 +1450,501 @@
     }
 
     .hero-link-card:hover {
-      background: #f0fdf4;
-      border-color: var(--green);
+      background: var(--accent-light);
+      border-color: var(--primary);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-1);
+      box-shadow: var(--shadow-2);
     }
 
     .hero-link-card:hover .hero-meta-value {
       text-decoration: underline;
-      color: var(--green);
+      color: var(--primary);
+    }
+
+    /* =========================================================
+       SECTION 5: CLEAN UI OVERRIDES
+       ========================================================= */
+
+    body {
+      line-height: 1.7;
+      font-size: 1rem;
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 220px);
+    }
+
+    a:hover {
+      transform: none;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .site-header {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid #dbe4f0;
+    }
+
+    .site-header.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+
+    .logo {
+      color: var(--primary-dark);
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .logo:hover {
+      color: var(--primary);
+      transform: none;
+    }
+
+    .nav-links {
+      background: #f7faff;
+      border: 1px solid #dbe4f0;
+      box-shadow: inset 0 1px 0 #fff;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      padding: 8px 14px;
+      font-size: 0.84rem;
+    }
+
+    .nav-links a:hover {
+      background: #e8f1ff;
+      color: var(--primary-dark);
+      transform: none;
+    }
+
+    .nav-links a.active,
+    .nav-links a[aria-current="page"] {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        background: #fff;
+        border-top: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    .hero {
+      padding: 132px 0 86px;
+      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 62%, #edf3ff 100%);
+    }
+
+    .hero::before {
+      background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.24) 1px, transparent 0);
+      opacity: 0.35;
+    }
+
+    @keyframes blueprintGridDraw {
+      from {
+        opacity: 0;
+        transform: scale(1.08);
+        background-size: 42px 42px;
+      }
+
+      to {
+        opacity: 0.35;
+        transform: scale(1);
+        background-size: 32px 32px;
+      }
+    }
+
+    @keyframes heroLetterBuild {
+      from {
+        opacity: 0;
+        transform: translateY(24px) scale(1.16);
+        filter: blur(5px);
+        color: #6b9cf6;
+        text-shadow: 0 0 0 rgba(37, 99, 235, 0);
+      }
+
+      45% {
+        opacity: 1;
+      }
+
+      70% {
+        color: #2563eb;
+        text-shadow: 0 0 14px rgba(37, 99, 235, 0.32);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+        color: #0b1b44;
+        text-shadow: 0 0 0 rgba(37, 99, 235, 0);
+      }
+    }
+
+    @keyframes heroNameScan {
+      from {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.8;
+      }
+
+      80% {
+        opacity: 0.8;
+      }
+
+      to {
+        transform: scaleX(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes heroAvatarPop {
+      from {
+        opacity: 0;
+        transform: translateY(34px) scale(0.68);
+      }
+
+      55% {
+        opacity: 1;
+        transform: translateY(-6px) scale(1.08);
+      }
+
+      78% {
+        transform: translateY(2px) scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1.0);
+      }
+    }
+
+    .hero--blueprint-intro::before {
+      opacity: 0;
+      transform: scale(1.08);
+      animation: blueprintGridDraw 1.15s cubic-bezier(0.2, 0.8, 0.2, 1) 0.08s forwards;
+    }
+
+    .hero-title-build {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      position: relative;
+      gap: 0.01em;
+    }
+
+    .hero-title-build .hero-letter {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(24px) scale(1.16);
+      filter: blur(5px);
+      will-change: transform, opacity, filter;
+      animation: heroLetterBuild 0.58s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      animation-delay: calc(0.15s + (var(--char-index) * 0.09s));
+    }
+
+    .hero-title-build .hero-letter--space {
+      min-width: 0.32em;
+      transform: none;
+      filter: none;
+    }
+
+    .hero-title-build::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 60%;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(37, 99, 235, 0.9) 20%, rgba(37, 99, 235, 0.95) 80%, transparent 100%);
+      transform: scaleX(0);
+      transform-origin: left center;
+      opacity: 0;
+      pointer-events: none;
+      animation: heroNameScan 1.35s ease-out 0.2s forwards;
+    }
+
+    .hero--build-active .hero-avatar-wrapper {
+      opacity: 0;
+      transform: translateY(34px) scale(0.68);
+      will-change: transform, opacity;
+    }
+
+    .hero--letters-built .hero-avatar-wrapper {
+      animation: heroAvatarPop 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      color: #0b1b44;
+    }
+
+    .hero-lead {
+      color: #334155;
+      max-width: 640px;
+    }
+
+    .hero-avatar {
+      border: 8px solid #fff;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(30, 58, 138, 0.18);
+    }
+
+    .hero-avatar:hover {
+      transform: translateY(-6px);
+    }
+
+    .btn {
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .btn-primary,
+    .btn--primary {
+      background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+      border-color: #1d4ed8;
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover,
+    .btn--primary:hover {
+      background: #1e40af;
+      box-shadow: 0 10px 24px rgba(30, 64, 175, 0.28);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline,
+    .btn--quiet {
+      border: 1px solid #bfd2ee;
+      background: #fff;
+      color: #1e3a8a;
+    }
+
+    .btn-outline:hover,
+    .btn--quiet:hover {
+      background: #eff6ff;
+      border-color: #93b5e9;
+      color: #1e3a8a;
+      transform: none;
+    }
+
+    .section {
+      padding: 86px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .section--bg-card {
+      background: linear-gradient(180deg, #f8fbff 0%, #f3f8ff 100%);
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        padding: 56px 0;
+      }
+    }
+
+    h2::after {
+      width: 56px;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #1e3a8a);
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #d8e1f0;
+      border-radius: 14px;
+      border-left: 0;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      color: var(--text-main);
+    }
+
+    .card:hover {
+      border-color: #93b5e9;
+      box-shadow: 0 16px 30px rgba(30, 58, 138, 0.13);
+      transform: translateY(-4px);
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid #d8e1f0;
+      border-left: 4px solid #2563eb;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .project-card:hover {
+      box-shadow: 0 14px 28px rgba(30, 58, 138, 0.12);
+    }
+
+    .split-image-container {
+      background: #f8fbff;
+    }
+
+    .resource-card {
+      background: #fff;
+      border: 1px solid #d8e1f0;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.05);
+    }
+
+    .resource-card:hover {
+      border-color: #93b5e9;
+      box-shadow: 0 12px 20px rgba(30, 58, 138, 0.1);
+    }
+
+    .resource-card img {
+      border: 1px solid #dbe4f0;
+      background: #f1f5f9;
+    }
+
+    .quote-box {
+      background: #f8fbff !important;
+      border: 1px solid #c9d9f2 !important;
+      border-left: 4px solid #2563eb !important;
+      box-shadow: none !important;
+    }
+
+    .quote-box:hover {
+      transform: none;
+      border-color: #93b5e9 !important;
+      box-shadow: 0 10px 20px rgba(30, 58, 138, 0.08) !important;
+    }
+
+    .stats-row {
+      gap: 24px;
+      margin-top: 24px;
+      border-top: 1px solid #dbe4f0;
+      padding-top: 18px;
+    }
+
+    .stat-item {
+      border-left: 2px solid #2563eb;
+      padding-left: 12px;
+    }
+
+    .stat-item strong {
+      color: #1e3a8a;
+      font-size: 1.65rem;
+    }
+
+    .table-wrapper {
+      border: 1px solid #d8e1f0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.05);
+    }
+
+    th {
+      background: #1e3a8a;
+      color: #fff;
+    }
+
+    tbody tr:hover {
+      transform: none;
+      box-shadow: none;
+      background: #eff6ff;
+    }
+
+    tr:hover td {
+      background: transparent;
+    }
+
+    .chip {
+      background: #eff6ff;
+      color: #1e3a8a;
+      border: 1px solid #bfd2ee;
+    }
+
+    .chip:hover {
+      background: #dbeafe;
+      border-color: #93b5e9;
+      box-shadow: none;
+      color: #1e3a8a;
+      transform: none;
+    }
+
+    .artifact-thumb {
+      border: 1px solid #d8e1f0 !important;
+      border-radius: 12px;
+      background: #e9f1ff !important;
+    }
+
+    .artifact-thumb:hover {
+      box-shadow: 0 12px 22px rgba(30, 58, 138, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .site-footer,
+    .footer {
+      background: linear-gradient(180deg, #153270 0%, #0f2858 100%);
+      margin-top: 0;
+      border-top: 1px solid rgba(224, 231, 255, 0.2);
+    }
+
+    .site-footer a,
+    .footer a {
+      text-decoration: none;
+      border-bottom: 1px solid rgba(224, 231, 255, 0.4);
+    }
+
+    .site-footer a:hover,
+    .footer a:hover {
+      border-bottom-color: transparent;
+    }
+
+    .site-footer .list li::before {
+      display: none;
+    }
+
+    .site-footer .list li {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .footer-chip {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .footer-chip:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .section-header .kicker {
+      color: #1d4ed8;
+    }
+
+    .section-header p,
+    .project-meta,
+    .project-footer,
+    .quote-text,
+    .timeline-meta,
+    .list li {
+      color: #475569;
+    }
+
+    .media-links .btn--quiet {
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   </style>
 
@@ -1141,102 +1970,68 @@
 
   <!-- HEADER (branded) -->
   <header class="site-header">
-    <div class="header-inner container">
-      <a href="#" class="brand">
-        <span class="brand-text"
-          style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 2px; border-bottom: 2px solid #000;">
-          Academic Portfolio
-        </span>
-      </a>
+    <div class="container header-inner">
+      <a href="#home" class="logo">V. Battula</a>
 
-      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"
-        aria-controls="nav-links">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-          style="pointer-events: none">
-          <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"
+        aria-controls="nav-links">&#9776;</button>
 
       <nav id="nav-links" class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#academics">Academics</a>
-        <a href="#projects">Projects & Events</a>
+        <a href="#projects">Projects</a>
         <a href="#athletics">Athletics</a>
         <a href="#volunteering">Volunteering</a>
         <a href="#leadership">Leadership</a>
-        <a href="#notes">Notes</a>
-        <a href="#exams">Exams</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#contact" class="btn btn--secondary">Contact</a>
+        <a href="#progress">Progress</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero">
-      <canvas id="hero-canvas"></canvas>
-      <div class="container hero-layout">
-        <div>
-          <div class="kicker">Student Portfolio</div>
-          <!-- Placeholder image used as requested (update later) -->
-          <img src="vihari.png" alt="Portrait of Vihari Battula" class="hero-avatar" />
-          <h1>Vihari Battula</h1>
-          <p class="lead">
-            This portfolio tracks my academic progress and my commitment to thinking critically in STEM.
-            Beyond the classroom, I enjoy the process of working through challenges and
-            developing leadership skills that contribute to a positive and productive environment.
-          </p>
+    <section class="hero hero--blueprint-intro" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left: Text -->
+          <div class="hero-copy">
+            <span class="hero-kicker">Student Portfolio &middot; Class of 2029</span>
+            <h1>Vihari Battula</h1>
+            <p class="hero-lead">
+              This portfolio tracks my academic progress and my commitment to thinking critically in STEM.
+              Beyond the classroom, I enjoy the process of working through challenges and
+              developing leadership skills that contribute to a positive and productive environment.
+            </p>
 
-          <div class="row" style="margin-top: 18px">
-            <a href="https://github.com/VihariBattula/" target="_blank" rel="noopener noreferrer"
-              class="btn btn--primary">GitHub Profile</a>
-            <a href="#projects" class="btn btn--quiet">View Highlights</a>
+            <div class="hero-actions">
+              <a href="https://github.com/VihariBattula/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary">GitHub Profile</a>
+              <a href="#projects" class="btn btn-outline">View Highlights</a>
+            </div>
+
+            <!-- Quick Stats Row -->
+            <div class="stats-row">
+              <div class="stat-item">
+                <strong>9th</strong>
+                <span>Grade</span>
+              </div>
+              <div class="stat-item">
+                <strong>STEM</strong>
+                <span>Focus Track</span>
+              </div>
+              <div class="stat-item">
+                <strong>MICDS</strong>
+                <span>School</span>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-meta-grid">
-            <div class="hero-meta-card">
-              <div class="hero-meta-label">Grade & School</div>
-              <div class="hero-meta-value">
-                9th Grade, MICDS
-              </div>
-            </div>
-            <div class="hero-meta-card">
-              <div class="hero-meta-label">Academic Focus</div>
-              <div class="hero-meta-value">
-                Math · Physics · History · Spanish
-              </div>
-            </div>
-            <a href="https://activestem.org" target="_blank" rel="noopener" class="hero-meta-card hero-link-card"
-              title="View Program Details">
-              <div class="hero-meta-label">Program &amp; Mentorship</div>
-              <div class="hero-meta-value" style="color: var(--navy); font-weight: 700">
-                ActiveSTEM Cohort ↗
-              </div>
-              <div style="font-size: 0.75rem; color: var(--muted); margin-top: 2px">
-                Dir. Prof. Vinay Kodipelly
-              </div>
-            </a>
+          <!-- Right: Image -->
+          <div class="hero-avatar-wrapper">
+            <img src="vihari.png" alt="Portrait of Vihari Battula" class="hero-avatar" />
           </div>
         </div>
-
-        <aside class="surface" style="padding: 18px">
-          <h3>Current Goals</h3>
-          <ul class="list">
-            <li>Excel in Integrated Math and Physics coursework.</li>
-            <li>Develop strong leadership skills through event making and competitions.</li>
-            <li>Prepare for college-level reading and analysis.</li>
-          </ul>
-
-          <h3 style="margin-top: 16px">Quick Highlights</h3>
-          <ul class="list">
-            <li>Student Leader for the Middle School Math Bowl.</li>
-            <li>Studying diverse literature from "Things Fall Apart" to "Antigone".</li>
-            <li>Building this digital portfolio to track my work.</li>
-          </ul>
-        </aside>
       </div>
     </section>
 
@@ -1245,7 +2040,7 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">About Me</div>
-          <h2>Who I Am & What I’m Working Towards</h2>
+          <h2>Who I Am & What I'm Working Towards</h2>
           <p>
             A dedicated student at MICDS with a passion for creative problem solving.
           </p>
@@ -1256,7 +2051,7 @@
             <h3>Short Bio</h3>
             <p>
               I am a 9th-grade student at Mary Institute and Saint Louis Country Day School (MICDS).
-              I believe in the importance of healthy competition—pushing myself to be better
+              I believe in the importance of healthy competition - pushing myself to be better
               without losing sight of collaboration and respect.
             </p>
             <p>
@@ -1280,7 +2075,7 @@
             </ul>
             <div class="quote-box fade-in-up">
               <div class="quote-text">
-                "What sets Vihari apart is his focus and pace—he absorbs new ideas rapidly and translates them into
+                "What sets Vihari apart is his focus and pace - he absorbs new ideas rapidly and translates them into
                 polished, meaningful artifacts."
               </div>
               <div class="quote-author">Prof. Vinay Kodipelly</div>
@@ -1377,7 +2172,7 @@
                 John Green
               </p>
               <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
-                Status: Recently Studied
+                Status: Read in August 2025
               </div>
             </div>
           </div>
@@ -1391,7 +2186,7 @@
                 Chinua Achebe
               </p>
               <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
-                Status: Recently Studied
+                Status: Read in December 2025
               </div>
             </div>
           </div>
@@ -1405,7 +2200,7 @@
                 William Golding
               </p>
               <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
-                Status: Recently Studied
+                Status: Read in October 2025
               </div>
             </div>
           </div>
@@ -1418,8 +2213,36 @@
               <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
                 Sophocles
               </p>
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
+                Status: Read in January 2026
+              </div>
+            </div>
+          </div>
+
+          <!-- Book 5 -->
+          <div class="resource-card fade-in-up">
+            <img src="AMND.jpg" alt="A Midsummer Night's Dream">
+            <div class="resource-info">
+              <h3 style="font-size: 1rem; margin: 0 0 4px">A Midsummer Night's Dream</h3>
+              <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
+                William Shakespeare
+              </p>
               <div style="margin-top:8px; font-size:0.75rem; color:var(--green); font-weight:700">
-                Status: Upcoming (Next Semester)
+                Status: Currently Reading
+              </div>
+            </div>
+          </div>
+
+          <!-- Book 6 -->
+          <div class="resource-card fade-in-up">
+            <img src="CWYL.jpg" alt="Clap When You Land">
+            <div class="resource-info">
+              <h3 style="font-size: 1rem; margin: 0 0 4px">Clap When You Land</h3>
+              <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
+                Elizabeth Acevedo
+              </p>
+              <div style="margin-top:8px; font-size:0.75rem; color:var(--ink); font-weight:700">
+                Status: Read in August 2025
               </div>
             </div>
           </div>
@@ -1445,7 +2268,7 @@
                 <h3 class="project-title">Middle School Math Bowl</h3>
                 <span class="project-badge">Student Leader</span>
               </div>
-              <div class="project-meta">Math Competition · Grades 6-8</div>
+              <div class="project-meta">Math Competition - Grades 6-8</div>
               <p class="project-body">
                 The Middle School Math Bowl was an exciting and challenging competition for middle school students.
                 As a student leader, I helped organize and guide the team through complex problems,
@@ -1471,7 +2294,7 @@
                   <img src="MSMB.png" alt="Middle School Math Bowl Slides"
                     style="max-width: 100%; height: auto; margin-bottom: 5px;">
 
-                  <span>View on GitHub ↗</span>
+                  <span>View on GitHub -></span>
 
                 </a>
 
@@ -1483,25 +2306,36 @@
             </div>
           </article>
 
-          <!-- Placeholder for future projects -->
-          <article class="project-card fade-in-up">
-            <div class="project-header-row">
-              <h3 class="project-title">Future STEM Project</h3>
-              <span class="project-badge">Planned</span>
+          <!-- Myopia Research Article Embed -->
+          <article class="project-card fade-in-up split-card">
+            <div class="split-content">
+              <div class="project-header-row">
+                <h3 class="project-title">Myopia in the Digital Age</h3>
+                <span class="project-badge">Research</span>
+              </div>
+              <div class="project-meta">Self-Directed Study</div>
+              <p class="project-body">
+                An exploration of Opthamology, screen dependency, and why raising awareness about daily eye strain could prevent irreversible damage. This article synthesizes personal narrative with medical research to argue for a preventative approach centered on the "20-20-20" rule and dietary awareness.
+              </p>
+              <div class="row--tight" style="margin-top: 16px; margin-bottom: 24px;">
+                <span class="chip" data-variant="tag">Public Health</span>
+                <span class="chip" data-variant="tag">Optometry</span>
+                <span class="chip" data-variant="tag">Research Writing</span>
+              </div>
+              <div class="project-footer" style="margin-top: auto;">
+                <a href="Myopiaresearch.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                  Open Full Article ->
+                </a>
+              </div>
             </div>
-            <div class="project-meta">Upcoming</div>
-            <p class="project-body">
-              Space reserved for upcoming science fairs, coding projects, or history research presentations.
-            </p>
-            <div class="project-footer">
-              <span>Skills: Research, Presentation</span>
+            <div class="split-image-container" style="padding: 0; background: #fff; overflow: hidden; display: flex; flex-direction: column;">
+              <iframe src="Myopiaresearch.html" style="width: 100%; height: 100%; min-height: 400px; flex-grow: 1; border: none; border-left: 1px solid var(--border);" title="Myopia in the Digital Age Article Preview"></iframe>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ATHLETICS (SQUASH) -->
     <section id="athletics" class="section section--bg-card">
       <div class="container">
         <div class="section-header">
@@ -1511,25 +2345,28 @@
             Dedication, discipline, and competitive spirit on the court.
           </p>
         </div>
-        <article class="project-card fade-in-up">
-          <div class="project-header-row">
-            <h3 class="project-title">Competitive Squash</h3>
-            <span class="project-badge">Athlete</span>
+        <article class="project-card fade-in-up split-card">
+          <div class="split-content">
+            <div class="project-header-row">
+              <h3 class="project-title">Competitive Squash</h3>
+              <span class="project-badge">Athlete</span>
+            </div>
+            <div class="project-meta">Training & Competitions</div>
+            <p class="project-body">
+              Squash has taught me the importance of agility, strategy, and mental endurance.
+              I am committed to consistent training and improving my game with every match.
+              Participating in national tournaments like Squash Nationals has pushed me to maintain a high level of
+              focus under pressure.
+            </p>
+            <div class="row--tight" style="margin-top: 16px">
+              <span class="chip" data-variant="tag">Dedication</span>
+              <span class="chip" data-variant="tag">Discipline</span>
+              <span class="chip" data-variant="tag">Competitive</span>
+            </div>
           </div>
-          <div class="project-meta">Training & Competitions</div>
-          <p class="project-body">
-            Squash has taught me the importance of agility, strategy, and mental endurance.
-            I am committed to consistent training and improving my game with every match.
-          </p>
-          <div class="row--tight" style="margin-top: 12px">
-            <span class="chip" data-variant="tag">Dedication</span>
-            <span class="chip" data-variant="tag">Discipline</span>
-            <span class="chip" data-variant="tag">Competitive</span>
-          </div>
-          <!-- Squash Image -->
-          <div class="split-image" style="margin-top: 20px; min-height: 350px;">
+          <div class="split-image-container" style="flex: 0.7;">
             <img src="SquashNationals.jpg" alt="Squash Nationals Tournament"
-              style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;">
+              style="width: 100%; height: 100%; object-fit: cover;" />
           </div>
         </article>
       </div>
@@ -1629,137 +2466,116 @@
       </div>
     </section>
 
-    <!-- NOTES / LEARNING ARTIFACTS -->
-    <section id="notes" class="section">
+    <!-- PROGRESS (CONSOLIDATED: NOTES, EXAMS, TIMELINE) -->
+    <section id="progress" class="section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Notes & Work</div>
-          <h2>Selected Notes & Learning Artifacts</h2>
+          <div class="kicker">Journey & Results</div>
+          <h2>Growth & Progress</h2>
           <p>
-            Evidence of how I work and organize my thoughts.
+            Tracking my academic milestones, learning artifacts, and evolution over time.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card fade-in-up">
-            <h3>Artifact Gallery</h3>
-            <p style="margin-bottom:12px">Snapshots of my notes and summaries.</p>
+        <div class="split">
+          <!-- Left: Timeline of Growth -->
+          <aside>
+            <div class="card fade-in-up" style="height: 100%">
+              <h3>Growth Timeline</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Started 9th Grade at MICDS</div>
+                  <div class="timeline-meta">August 2025</div>
+                  <div class="timeline-body">
+                    Began high school with a focus on Integrated Math, Physics, and History.
+                  </div>
+                </div>
 
-            <div class="artifact-grid">
-              <div class="artifact-thumb">
-                <img src="Screenshot 2026-01-10 174257.png" alt="Math Notes" />
-                <div class="artifact-caption">Proofs Notes</div>
-              </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Math Bowl Leadership</div>
+                  <div class="timeline-meta">2025</div>
+                  <div class="timeline-body">
+                    Took on the role of Student Leader, helping organize and run the competition.
+                  </div>
+                </div>
 
-              <div class="artifact-thumb">
-                <img src="HistoryEssayPort.png" alt="History Essay" />
-                <div class="artifact-caption">History Paper</div>
-              </div>
-
-              <div class="artifact-thumb">
-                <img src="Infographicport.png" alt="Physics Lab" />
-                <div class="artifact-caption">Catapult Infographic</div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-title">Portfolio Launch</div>
+                  <div class="timeline-meta">Present</div>
+                  <div class="timeline-body">
+                    Launched this digital portfolio to track academic and extracurricular progress.
+                  </div>
+                </div>
               </div>
             </div>
-          </article>
-
-          <aside class="card fade-in-up">
-            <h3>Methodology</h3>
-            <p>
-              I use this section to store digital copies of my best work, ensuring I can track my improvement over the
-              academic year.
-            </p>
-            <ul class="list">
-              <li><strong>Structure:</strong> Organized notes for easy review.</li>
-              <li><strong>Reflection:</strong> Looking back at past essays to improve writing style.</li>
-              <li><strong>Consistency:</strong> Regular updates to my portfolio.</li>
-            </ul>
           </aside>
-        </div>
-      </div>
-    </section>
 
-    <!-- EXAMS & BENCHMARKS -->
-    <section id="exams" class="section section--bg-card">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Exams & Benchmarks</div>
-          <h2>Key Assessments & Progress</h2>
-          <p>
-            A simple record of important milestones.
-          </p>
-        </div>
+          <!-- Right: Artifacts & Benchmarks -->
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            <!-- Learning Artifacts -->
+            <article class="card fade-in-up">
+              <h3>Selected Notes & Artifacts</h3>
+              <p style="margin-bottom:16px; font-size: 0.9rem;">Direct evidence of my learning process and analytical
+                writing.</p>
 
-        <article class="card fade-in-up">
-          <h3>Selected Assessments</h3>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Exam / Test</th>
-                  <th>Date</th>
-                  <th>Reflection</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Math Bowl Participation</td>
-                  <td>2025</td>
-                  <td>Great experience in timed problem solving and team management.</td>
-                </tr>
-                <tr>
-                  <td>Semester 1 Finals</td>
-                  <td>Dec 2025</td>
-                  <td>Focus on synthesizing history themes and math concepts.</td>
-                </tr>
-              </tbody>
-            </table>
+              <div class="artifact-grid">
+                <div class="artifact-thumb">
+                  <img src="MathNotesPort.png" alt="Math Notes" />
+                  <div class="artifact-caption">Proofs Notes</div>
+                </div>
+
+                <div class="artifact-thumb">
+                  <img src="HistoryEssayPort.png" alt="History Essay" />
+                  <div class="artifact-caption">History Paper</div>
+                </div>
+
+                <div class="artifact-thumb">
+                  <img src="Infographicport.png" alt="Physics Lab" />
+                  <div class="artifact-caption">Catapult Infographic</div>
+                </div>
+              </div>
+
+              <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border);">
+                <h4 style="font-size: 0.95rem; margin-bottom: 8px;">Methodology</h4>
+                <p style="font-size: 0.9rem; color: var(--muted);">
+                  I document my best work to track improvement. My focus is on structured organization,
+                  regular reflections on writing style, and maintaining consistent progress.
+                </p>
+              </div>
+            </article>
+
+            <!-- Academic Benchmarks -->
+            <article class="card fade-in-up">
+              <h3>Key Assessments</h3>
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Exam / Test</th>
+                      <th>Date</th>
+                      <th>Reflection</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Math Bowl Participation</td>
+                      <td>2025</td>
+                      <td>Great experience in timed problem solving and team management.</td>
+                    </tr>
+                    <tr>
+                      <td>Semester 1 Finals</td>
+                      <td>Dec 2025</td>
+                      <td>Focus on synthesizing history themes and math concepts.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section id="timeline" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Timeline</div>
-          <h2>Timeline of Growth</h2>
-          <p>
-            Major turning points in my learning journey so far.
-          </p>
         </div>
-
-        <article class="card fade-in-up">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-title">Started 9th Grade at MICDS</div>
-              <div class="timeline-meta">August 2025</div>
-              <div class="timeline-body">
-                Began high school with a focus on Integrated Math, Physics, and History.
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-title">Middle School Math Bowl Leadership</div>
-              <div class="timeline-meta">2025</div>
-              <div class="timeline-body">
-                Took on the role of Student Leader, helping organize and run the competition.
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-title">Portfolio Launch</div>
-              <div class="timeline-meta">Present</div>
-              <div class="timeline-body">
-                Launched this digital portfolio to track academic and extracurricular progress.
-              </div>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -1788,7 +2604,7 @@
           </article>
 
           <aside class="card fade-in-up">
-            <h3>Notes</h3>
+            <h3>Portfolio Info</h3>
             <p>
               This portfolio is for academic purposes. This portfolio was built to help track all my events and
               achievements throughout high school.
@@ -1823,27 +2639,16 @@
             <strong>Prof. Vinay Kanth Rao Kodipelly</strong>.
           </li>
           <li style="padding-left: 0;">
-            <a href="https://activestem.org" target="_blank" rel="noopener" style="
-                display: inline-block;
-                background: rgba(255,255,255,0.1);
-                padding: 8px 12px;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 0.85rem;
-                border: 1px solid rgba(255,255,255,0.2);
-                transition: 0.2s;
-              " onmouseover="this.style.background='rgba(255,255,255,0.2)'"
-              onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-              Active Learning Institute →
+            <a href="https://activestem.org" target="_blank" rel="noopener" class="footer-chip">
+              Active Learning Institute ->
             </a>
           </li>
         </ul>
       </div>
     </div>
     <div class="container" style="margin-top: 14px; opacity: 0.85; font-size: 0.9rem">
-      © <span class="year"></span> Vihari Battula.
-      Template © <span class="year"></span> Prof. Vinay Kanth Rao Kodipelly, Active Learning Institute (ActiveSTEM.org).
+      &copy; <span class="year"></span> Vihari Battula.
+      Template &copy; <span class="year"></span> Prof. Vinay Kanth Rao Kodipelly, Active Learning Institute (ActiveSTEM.org).
       MIT
       License.
     </div>
@@ -1851,57 +2656,195 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Set footer year
       const yearEls = document.querySelectorAll(".year");
       const currentYear = new Date().getFullYear();
-      yearEls.forEach(el => {
+      yearEls.forEach((el) => {
         el.textContent = currentYear;
       });
 
-      // Mobile menu toggle
+      const heroSection = document.querySelector(".hero--blueprint-intro");
+      const heroTitle = heroSection ? heroSection.querySelector(".hero-copy h1") : null;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (heroSection && heroTitle && !prefersReducedMotion) {
+        const heroName = heroTitle.textContent.trim();
+        if (heroName.length > 0) {
+          heroSection.classList.add("hero--build-active");
+          heroTitle.classList.add("hero-title-build");
+          heroTitle.setAttribute("aria-label", heroName);
+          heroTitle.textContent = "";
+
+          [...heroName].forEach((char, index) => {
+            const letterEl = document.createElement("span");
+            const isSpace = char === " ";
+            letterEl.className = isSpace ? "hero-letter hero-letter--space" : "hero-letter";
+            letterEl.style.setProperty("--char-index", String(index));
+            letterEl.textContent = isSpace ? "\u00A0" : char;
+            heroTitle.appendChild(letterEl);
+          });
+
+          const totalBuildMs = (heroName.length * 90) + 900;
+          window.setTimeout(() => {
+            heroSection.classList.add("hero--letters-built");
+          }, totalBuildMs);
+        }
+      }
+
       const menuToggle = document.getElementById("menu-toggle");
       const navLinks = document.getElementById("nav-links");
+      const navAnchors = Array.from(document.querySelectorAll('#nav-links a[href^="#"]'));
+
+      const closeMobileMenu = () => {
+        if (!menuToggle || !navLinks) return;
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      };
+
+      const setActiveNav = (targetHref) => {
+        navAnchors.forEach((link) => {
+          const isActive = link.getAttribute("href") === targetHref;
+          link.classList.toggle("active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      const initialHash = window.location.hash;
+      if (initialHash && navAnchors.some((link) => link.getAttribute("href") === initialHash)) {
+        setActiveNav(initialHash);
+      }
 
       if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", () => {
-          const isExpanded = navLinks.classList.toggle("show");
+          const isExpanded = navLinks.classList.toggle("active");
           menuToggle.setAttribute("aria-expanded", String(isExpanded));
-
-          // Toggle body scroll lock
-          if (isExpanded) {
-            document.body.style.overflow = "hidden";
-          } else {
-            document.body.style.overflow = "";
-          }
+          document.body.style.overflow = isExpanded ? "hidden" : "";
         });
 
         navLinks.addEventListener("click", (e) => {
-          if (e.target.matches("a")) {
-            navLinks.classList.remove("show");
-            menuToggle.setAttribute("aria-expanded", "false");
-            document.body.style.overflow = "";
+          const target = e.target;
+          if (!(target instanceof Element)) return;
+          if (target.matches("a")) {
+            const href = target.getAttribute("href");
+            if (href && href.startsWith("#")) {
+              setActiveNav(href);
+            }
+            closeMobileMenu();
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768) {
+            closeMobileMenu();
           }
         });
       }
 
-      // Scroll animations for .fade-in-up
-      const animatedEls = document.querySelectorAll(".fade-in-up");
-      const observer = new IntersectionObserver(
+      const revealObserver = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
+          entries.forEach((entry, index) => {
+            if (!entry.isIntersecting) return;
+            setTimeout(() => {
               entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
+            }, index * 80);
+            revealObserver.unobserve(entry.target);
           });
         },
-        { threshold: 0.1 }
+        {
+          threshold: 0.15,
+          rootMargin: "0px 0px -50px 0px"
+        }
       );
 
-      animatedEls.forEach((el) => observer.observe(el));
+      const animatedElements = document.querySelectorAll(".fade-in-up, .slide-in-left, .slide-in-right, .scale-in");
+      animatedElements.forEach((el) => revealObserver.observe(el));
+
+      const sections = navAnchors
+        .map((link) => {
+          const selector = link.getAttribute("href");
+          return selector ? document.querySelector(selector) : null;
+        })
+        .filter(Boolean);
+
+      if (sections.length > 0 && navAnchors.length > 0) {
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            const visibleEntries = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+            if (visibleEntries.length === 0) return;
+            setActiveNav(`#${visibleEntries[0].target.id}`);
+          },
+          {
+            rootMargin: "-45% 0px -45% 0px",
+            threshold: [0.2, 0.5, 0.8]
+          }
+        );
+
+        sections.forEach((section) => sectionObserver.observe(section));
+      }
+
+      const animateValue = (el, start, end, duration, prefix = "", suffix = "") => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const value = Math.floor(progress * (end - start) + start);
+          el.textContent = `${prefix}${value}${suffix}`;
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          } else {
+            el.textContent = `${prefix}${end}${suffix}`;
+          }
+        };
+        window.requestAnimationFrame(step);
+      };
+
+      const statObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const statNumber = entry.target.querySelector("strong");
+            if (!statNumber || statNumber.dataset.animated) return;
+
+            const originalText = statNumber.textContent.trim();
+            const match = originalText.match(/^([^\d]*)(\d+)([^\d]*)$/);
+            if (!match) return;
+
+            const prefix = match[1];
+            const value = Number.parseInt(match[2], 10);
+            const suffix = match[3];
+            if (Number.isNaN(value)) return;
+
+            statNumber.dataset.animated = "true";
+            animateValue(statNumber, 0, value, 900, prefix, suffix);
+            statObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.querySelectorAll(".stat-item").forEach((el) => statObserver.observe(el));
+
+      const header = document.querySelector(".site-header");
+      const syncHeaderState = () => {
+        if (!header) return;
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      };
+
+      window.addEventListener("scroll", syncHeaderState, { passive: true });
+      syncHeaderState();
     });
   </script>
-  <script src="js/math.js"></script>
+
 </body>
 
 </html>
