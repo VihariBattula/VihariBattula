@@ -1119,21 +1119,32 @@
 
     /* Project / event cards */
     .projects-grid {
-      display: grid;
+      display: flex;
+      flex-wrap: wrap;
       gap: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .project-card {
+      flex: 1 1 calc(33.333% - 18px);
+      min-width: 280px;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       background: var(--bg-surface);
       box-shadow: var(--shadow-card);
-      padding: 24px;
-      transition: all 0.25s ease;
+      padding: 0;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       border-left: 3px solid var(--primary);
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card.is-expanded {
+      flex: 1 0 100%;
+      flex-direction: row;
+      border-left-width: 6px;
+      border-color: var(--primary);
     }
 
     .project-card:hover {
@@ -1211,8 +1222,17 @@
       padding: 24px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      flex: 1;
+      min-width: 300px;
       border-bottom: 1px solid var(--border);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card.is-expanded .split-content {
+      border-bottom: 0;
+      border-right: 1px solid var(--border);
+      flex: 0 0 400px;
+      padding: 32px;
     }
 
     .split-image-container {
@@ -1966,7 +1986,7 @@
     }
 
     .poster-header {
-      background-color: #0F172A;
+      background-color: var(--primary-dark);
       color: #fff;
       padding: 40px;
       text-align: center;
@@ -2014,7 +2034,7 @@
     }
 
     .poster-block-title {
-      background: #0F172A;
+      background: var(--primary);
       color: #fff;
       padding: 12px 20px;
       font-weight: 700;
@@ -2037,7 +2057,7 @@
     }
 
     .poster-inner-block-title {
-      background: #334155;
+      background: var(--text-muted);
       color: #fff;
       padding: 8px 15px;
       font-weight: 600;
@@ -2060,7 +2080,7 @@
       background: #e2e8f0;
       text-align: left;
       padding: 8px;
-      border-bottom: 2px solid #0F172A;
+      border-bottom: 2px solid var(--primary);
     }
 
     .poster-table td {
@@ -2094,7 +2114,7 @@
     .poster-footer {
       margin-top: 20px;
       padding-top: 20px;
-      border-top: 2px solid #0F172A;
+      border-top: 2px solid var(--primary);
       font-size: 0.75rem;
       color: #475569;
     }
@@ -2144,6 +2164,34 @@
 
     .poster-showcase.collapsed + .poster-toggle-btn .icon {
       transform: rotate(180deg);
+    }
+
+    /* Project Embed Collapsable Logic */
+    .embed-wrapper {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .project-card.is-expanded .embed-wrapper {
+      width: 100%;
+      height: 700px;
+      opacity: 1;
+    }
+
+    .embed-wrapper::after {
+      display: none;
+    }
+
+    .embed-iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 600px;
+      border: none;
+      border-left: 1px solid var(--border);
     }
   </style>
 
@@ -2468,34 +2516,27 @@
                 As a student leader, I helped organize and guide the team through complex problems,
                 fostering a competitive yet supportive environment.
               </p>
-              <div class="project-footer">
-                <span>Skills: Leadership, Math Strategy, Organization</span>
+              <div class="row--tight" style="margin-top: 16px; margin-bottom: 24px;">
+                <span class="chip" data-variant="tag">Leadership</span>
+                <span class="chip" data-variant="tag">Math Strategy</span>
+                <span class="chip" data-variant="tag">Organization</span>
+              </div>
+              <div class="project-footer" style="margin-top: auto; display: flex; gap: 8px;">
+                <button class="btn btn-outline toggle-embed-btn" style="flex: 1; justify-content: center;">
+                  Expand Preview ▼
+                </button>
+                <a href="https://viharibattula.github.io/Middle-School-Math-Bowl/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+                  style="flex: 1; justify-content: center;">
+                  Open Slides ->
+                </a>
               </div>
             </div>
-            <div class="split-image-container">
-              <img src="mb-photo.png" alt="Math Bowl Competition" />
-
-              <!-- Presentation / Slides Section -->
-              <div class="media-links">
-                <h4 style="margin: 0 0 6px; font-size: 0.9rem;">Competition Slides</h4>
-                <p style="font-size: 0.8rem; margin: 0 0 12px; color: var(--muted);">
-                  Slides and materials I created for the event.
-                </p>
-                <a href="https://viharibattula.github.io/Middle-School-Math-Bowl/" target="_blank"
-                  rel="noopener noreferrer" class="btn btn--quiet"
-                  style="font-size: 0.8rem; width: 100%; justify-content: center; display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit;">
-
-                  <img src="MSMB.png" alt="Middle School Math Bowl Slides"
-                    style="max-width: 100%; height: auto; margin-bottom: 5px;">
-
-                  <span>View on GitHub -></span>
-
-                </a>
-
-                <!-- 
-                   To embed slides instead, replace the button above with your iframe code:
-                   <iframe src="YOUR_SLIDES_LINK/embed..." width="100%" height="200" border="0"></iframe>
-                 -->
+            <div class="split-image-container"
+              style="padding: 0; background: #fff; display: flex; flex-direction: column;">
+              <div class="embed-wrapper">
+                <iframe src="https://viharibattula.github.io/Middle-School-Math-Bowl/"
+                  class="embed-iframe"
+                  title="Middle School Math Bowl Slides"></iframe>
               </div>
             </div>
           </article>
@@ -2518,18 +2559,23 @@
                 <span class="chip" data-variant="tag">Optometry</span>
                 <span class="chip" data-variant="tag">Research Writing</span>
               </div>
-              <div class="project-footer" style="margin-top: auto;">
-                <a href="Myopiaresearch.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
-                  style="width: 100%; justify-content: center;">
-                  Open Full Article ->
+              <div class="project-footer" style="margin-top: auto; display: flex; gap: 8px;">
+                <button class="btn btn-outline toggle-embed-btn" style="flex: 1; justify-content: center;">
+                  Expand Preview ▼
+                </button>
+                <a href="Myopiaresearch.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+                  style="flex: 1; justify-content: center;">
+                  Open Article ->
                 </a>
               </div>
             </div>
             <div class="split-image-container"
-              style="padding: 0; background: #fff; overflow: hidden; display: flex; flex-direction: column;">
-              <iframe src="Myopiaresearch.html"
-                style="width: 100%; height: 100%; min-height: 400px; flex-grow: 1; border: none; border-left: 1px solid var(--border);"
-                title="Myopia in the Digital Age Article Preview"></iframe>
+              style="padding: 0; background: #fff; display: flex; flex-direction: column;">
+              <div class="embed-wrapper">
+                <iframe src="Myopiaresearch.html"
+                  class="embed-iframe"
+                  title="Myopia in the Digital Age Article Preview"></iframe>
+              </div>
             </div>
           </article>
 
@@ -2549,18 +2595,23 @@
                 <span class="chip" data-variant="tag">Education</span>
                 <span class="chip" data-variant="tag">Humanities</span>
               </div>
-              <div class="project-footer" style="margin-top: auto;">
-                <a href="https://viharibattula.github.io/WorldHistoryCurriculum/" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
-                  style="width: 100%; justify-content: center;">
+              <div class="project-footer" style="margin-top: auto; display: flex; gap: 8px;">
+                <button class="btn btn-outline toggle-embed-btn" style="flex: 1; justify-content: center;">
+                  Expand Preview ▼
+                </button>
+                <a href="https://viharibattula.github.io/WorldHistoryCurriculum/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+                  style="flex: 1; justify-content: center;">
                   View Curriculum ->
                 </a>
               </div>
             </div>
             <div class="split-image-container"
-              style="padding: 0; background: #fff; overflow: hidden; display: flex; flex-direction: column;">
-              <iframe src="https://viharibattula.github.io/WorldHistoryCurriculum/"
-                style="width: 100%; height: 100%; min-height: 400px; flex-grow: 1; border: none; border-left: 1px solid var(--border);"
-                title="World History Modern Curriculum Guide Preview"></iframe>
+              style="padding: 0; background: #fff; display: flex; flex-direction: column;">
+              <div class="embed-wrapper">
+                <iframe src="https://viharibattula.github.io/WorldHistoryCurriculum/"
+                  class="embed-iframe"
+                  title="World History Modern Curriculum Guide Preview"></iframe>
+              </div>
             </div>
           </article>
 
@@ -2580,18 +2631,23 @@
                 <span class="chip" data-variant="tag">STEM</span>
                 <span class="chip" data-variant="tag">Curriculum</span>
               </div>
-              <div class="project-footer" style="margin-top: auto;">
-                <a href="https://viharibattula.github.io/IntegratedPhysicsGuide/" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
-                  style="width: 100%; justify-content: center;">
+              <div class="project-footer" style="margin-top: auto; display: flex; gap: 8px;">
+                <button class="btn btn-outline toggle-embed-btn" style="flex: 1; justify-content: center;">
+                  Expand Preview ▼
+                </button>
+                <a href="https://viharibattula.github.io/IntegratedPhysicsGuide/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+                  style="flex: 1; justify-content: center;">
                   View Guide ->
                 </a>
               </div>
             </div>
             <div class="split-image-container"
-              style="padding: 0; background: #fff; overflow: hidden; display: flex; flex-direction: column;">
-              <iframe src="https://viharibattula.github.io/IntegratedPhysicsGuide/"
-                style="width: 100%; height: 100%; min-height: 400px; flex-grow: 1; border: none; border-left: 1px solid var(--border);"
-                title="Integrated Physics Guide Preview"></iframe>
+              style="padding: 0; background: #fff; display: flex; flex-direction: column;">
+              <div class="embed-wrapper">
+                <iframe src="https://viharibattula.github.io/IntegratedPhysicsGuide/"
+                  class="embed-iframe"
+                  title="Integrated Physics Guide Preview"></iframe>
+              </div>
             </div>
           </article>
         </div>
@@ -2804,21 +2860,21 @@
       <div class="container">
         <div class="section-header">
           <div class="kicker">Athletics</div>
-          <h2>Squash</h2>
+          <h2>Varsity Squash</h2>
           <p>
             Dedication, discipline, and competitive spirit on the court.
           </p>
         </div>
         <article class="project-card fade-in-up split-card">
-          <div class="split-content">
+          <div class="split-content" style="flex: 1.2;">
             <div class="project-header-row">
               <h3 class="project-title">Competitive Squash</h3>
-              <span class="project-badge">Athlete</span>
+              <span class="project-badge">Varsity Athlete</span>
             </div>
             <div class="project-meta">Training & Competitions</div>
             <p class="project-body">
               Squash has taught me the importance of agility, strategy, and mental endurance.
-              I am committed to consistent training and improving my game with every match.
+              As a Varsity athlete, I am committed to consistent training and improving my game with every match.
               Participating in national tournaments like Squash Nationals has pushed me to maintain a high level of
               focus under pressure.
             </p>
@@ -2828,9 +2884,9 @@
               <span class="chip" data-variant="tag">Competitive</span>
             </div>
           </div>
-          <div class="split-image-container" style="flex: 0.7;">
+          <div class="split-image-container" style="flex: 0.8; padding: 0;">
             <img src="SquashNationals.jpg" alt="Squash Nationals Tournament"
-              style="width: 100%; height: 100%; object-fit: cover;" />
+              style="width: 100%; height: 100%; object-fit: cover; display: block;" />
           </div>
         </article>
       </div>
@@ -2881,20 +2937,43 @@
       </div>
     </section>
 
-    <!-- LEADERSHIP & SERVICE -->
+    <!-- LEADERSHIP, CLUBS & SERVICE -->
     <section id="leadership" class="section section--bg-card">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Leadership</div>
-          <h2>Leadership & Contribution</h2>
+          <div class="kicker">Involvement</div>
+          <h2>Clubs, Leadership & Contribution</h2>
           <p>
-            Taking initiative in and out of the classroom.
+            Taking initiative and exploring passions outside the classroom.
           </p>
         </div>
 
         <div class="grid-2">
           <article class="card fade-in-up">
-            <h3>Roles & Activities</h3>
+            <h3>Clubs & Activities</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-title">Health Sciences Club</div>
+                <div class="timeline-meta">Member</div>
+                <div class="timeline-body">
+                  Participating in this club helps me pursue my passion for the medical field. It provides a foundational understanding of health sciences and connects me with resources and discussions that are crucial for a future career in medicine.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-title">How to Invest Club</div>
+                <div class="timeline-meta">Member</div>
+                <div class="timeline-body">
+                  This club teaches me the principles of financial literacy. By learning from discussions and practical exercises, I am gaining the skills needed to better handle my finances and steadily grow the money I have in the future.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card fade-in-up">
+            <h3>Leadership Roles</h3>
             <div class="timeline">
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -2917,15 +2996,6 @@
               </div>
             </div>
           </article>
-
-          <aside class="card fade-in-up">
-            <h3>Leadership Philosophy</h3>
-            <ul class="list">
-              <li><strong>Creativity:</strong> Solving problems by thinking outside the box.</li>
-              <li><strong>Guidance:</strong> Helping others find the answer rather than just giving it.</li>
-              <li><strong>Composure:</strong> Staying calm during competitive events.</li>
-            </ul>
-          </aside>
         </div>
       </div>
     </section>
@@ -3351,6 +3421,35 @@
           }
         });
       }
+
+      // Project Embed Toggle Logic
+      const toggleEmbedBtns = document.querySelectorAll(".toggle-embed-btn");
+      toggleEmbedBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const card = e.target.closest(".project-card");
+          if (!card) return;
+          
+          const isExpanded = card.classList.toggle("is-expanded");
+          
+          if (isExpanded) {
+            e.target.textContent = "Collapse Preview ▲";
+            // Optional: Collapse others
+            document.querySelectorAll(".project-card").forEach(c => {
+               if(c !== card) {
+                 c.classList.remove("is-expanded");
+                 const otherBtn = c.querySelector(".toggle-embed-btn");
+                 if(otherBtn) otherBtn.textContent = "Expand Preview ▼";
+               }
+            });
+            // Scroll into view
+            setTimeout(() => {
+              card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+          } else {
+            e.target.textContent = "Expand Preview ▼";
+          }
+        });
+      });
     });
   </script>
 
