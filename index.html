@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--
-  Student portfolio template authored by Prof. Vinay Kanth Rao Kodipelly
-  for the Active Learning Institute (ActiveSTEM.org).
+  Student portfolio template authored by Prof. Vinay Kanth Rao Kodipelly.
   This HTML template is provided under the MIT License for students
   who build their academic portfolios on GitHub Pages or similar platforms.
 -->
@@ -1946,6 +1945,206 @@
       flex-direction: column;
       align-items: center;
     }
+    /* =========================================================
+       POSTER SHOWCASE (TIKZPOSTER MIMIC)
+       ========================================================= */
+    .poster-showcase {
+      margin-top: 40px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .poster-inner {
+      padding: 40px;
+      background: #fff;
+      font-family: var(--font-body);
+      color: #000;
+      line-height: 1.4;
+    }
+
+    .poster-header {
+      background-color: #0F172A;
+      color: #fff;
+      padding: 40px;
+      text-align: center;
+      border-radius: var(--radius);
+      margin-bottom: 30px;
+    }
+
+    .poster-header h1 {
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .poster-header .author {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .poster-header .institute {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    @media (max-width: 1024px) {
+      .poster-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .poster-block {
+      background: #F8FAFC;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 25px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .poster-block-title {
+      background: #0F172A;
+      color: #fff;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .poster-block-body {
+      padding: 20px;
+      font-size: 0.95rem;
+    }
+
+    .poster-inner-block {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+
+    .poster-inner-block-title {
+      background: #334155;
+      color: #fff;
+      padding: 8px 15px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .poster-inner-block-body {
+      padding: 12px 15px;
+      font-size: 0.85rem;
+    }
+
+    .poster-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 0.85rem;
+    }
+
+    .poster-table th {
+      background: #e2e8f0;
+      text-align: left;
+      padding: 8px;
+      border-bottom: 2px solid #0F172A;
+    }
+
+    .poster-table td {
+      padding: 8px;
+      border-bottom: 1px solid #cbd5e1;
+    }
+
+    .poster-image-container {
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .poster-image-container img {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+
+    .poster-caption {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #475569;
+      margin-top: 8px;
+      display: block;
+    }
+
+    .poster-footer {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 2px solid #0F172A;
+      font-size: 0.75rem;
+      color: #475569;
+    }
+
+    .poster-references {
+      column-count: 1;
+      font-size: 0.7rem;
+    }
+
+    /* Collapsable Logic */
+    .poster-content-wrapper {
+      max-height: 5000px;
+      overflow: hidden;
+      transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+      opacity: 1;
+    }
+
+    .poster-showcase.collapsed .poster-content-wrapper {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .poster-toggle-btn {
+      margin-top: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .poster-toggle-btn:hover {
+      background: var(--accent-subtle);
+      border-color: var(--primary);
+    }
+
+    .poster-toggle-btn .icon {
+      transition: transform 0.3s ease;
+    }
+
+    .poster-showcase.collapsed + .poster-toggle-btn .icon {
+      transform: rotate(180deg);
+    }
   </style>
 
   <!-- Structured data -->
@@ -1955,12 +2154,7 @@
     "@type": "Person",
     "name": "Vihari Battula",
     "description": "High school student at MICDS building a math and STEM portfolio.",
-    "url": "https://viharibattula.github.io/VihariBattula/",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Active Learning Institute",
-      "url": "https://activestem.org"
-    }
+    "url": "https://viharibattula.github.io/VihariBattula/"
   }
   </script>
 </head>
@@ -2315,7 +2509,9 @@
               </div>
               <div class="project-meta">Self-Directed Study</div>
               <p class="project-body">
-                An exploration of Opthamology, screen dependency, and why raising awareness about daily eye strain could prevent irreversible damage. This article synthesizes personal narrative with medical research to argue for a preventative approach centered on the "20-20-20" rule and dietary awareness.
+                An exploration of Opthamology, screen dependency, and why raising awareness about daily eye strain could
+                prevent irreversible damage. This article synthesizes personal narrative with medical research to argue
+                for a preventative approach centered on the "20-20-20" rule and dietary awareness.
               </p>
               <div class="row--tight" style="margin-top: 16px; margin-bottom: 24px;">
                 <span class="chip" data-variant="tag">Public Health</span>
@@ -2323,15 +2519,283 @@
                 <span class="chip" data-variant="tag">Research Writing</span>
               </div>
               <div class="project-footer" style="margin-top: auto;">
-                <a href="Myopiaresearch.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                <a href="Myopiaresearch.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
+                  style="width: 100%; justify-content: center;">
                   Open Full Article ->
                 </a>
               </div>
             </div>
-            <div class="split-image-container" style="padding: 0; background: #fff; overflow: hidden; display: flex; flex-direction: column;">
-              <iframe src="Myopiaresearch.html" style="width: 100%; height: 100%; min-height: 400px; flex-grow: 1; border: none; border-left: 1px solid var(--border);" title="Myopia in the Digital Age Article Preview"></iframe>
+            <div class="split-image-container"
+              style="padding: 0; background: #fff; overflow: hidden; display: flex; flex-direction: column;">
+              <iframe src="Myopiaresearch.html"
+                style="width: 100%; height: 100%; min-height: 400px; flex-grow: 1; border: none; border-left: 1px solid var(--border);"
+                title="Myopia in the Digital Age Article Preview"></iframe>
             </div>
           </article>
+
+          <!-- World History Modern Curriculum Guide -->
+          <article class="project-card fade-in-up split-card">
+            <div class="split-content">
+              <div class="project-header-row">
+                <h3 class="project-title">World History Modern Guide</h3>
+                <span class="project-badge">Curriculum</span>
+              </div>
+              <div class="project-meta">Self-Study Resource</div>
+              <p class="project-body">
+                A comprehensive curriculum guide for Modern World History, bridging global narratives and critical analysis of modern civilizational shifts.
+              </p>
+              <div class="row--tight" style="margin-top: 16px; margin-bottom: 24px;">
+                <span class="chip" data-variant="tag">History</span>
+                <span class="chip" data-variant="tag">Education</span>
+                <span class="chip" data-variant="tag">Humanities</span>
+              </div>
+              <div class="project-footer" style="margin-top: auto;">
+                <a href="https://viharibattula.github.io/WorldHistoryCurriculum/" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
+                  style="width: 100%; justify-content: center;">
+                  View Curriculum ->
+                </a>
+              </div>
+            </div>
+            <div class="split-image-container"
+              style="padding: 0; background: #fff; overflow: hidden; display: flex; flex-direction: column;">
+              <iframe src="https://viharibattula.github.io/WorldHistoryCurriculum/"
+                style="width: 100%; height: 100%; min-height: 400px; flex-grow: 1; border: none; border-left: 1px solid var(--border);"
+                title="World History Modern Curriculum Guide Preview"></iframe>
+            </div>
+          </article>
+
+          <!-- Integrated Physics Guide -->
+          <article class="project-card fade-in-up split-card">
+            <div class="split-content">
+              <div class="project-header-row">
+                <h3 class="project-title">Integrated Physics Guide</h3>
+                <span class="project-badge">Science</span>
+              </div>
+              <div class="project-meta">STEM Resource</div>
+              <p class="project-body">
+                A detailed physics guide integrating core concepts with practical applications, designed to simplify complex physical laws for student mastery.
+              </p>
+              <div class="row--tight" style="margin-top: 16px; margin-bottom: 24px;">
+                <span class="chip" data-variant="tag">Physics</span>
+                <span class="chip" data-variant="tag">STEM</span>
+                <span class="chip" data-variant="tag">Curriculum</span>
+              </div>
+              <div class="project-footer" style="margin-top: auto;">
+                <a href="https://viharibattula.github.io/IntegratedPhysicsGuide/" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
+                  style="width: 100%; justify-content: center;">
+                  View Guide ->
+                </a>
+              </div>
+            </div>
+            <div class="split-image-container"
+              style="padding: 0; background: #fff; overflow: hidden; display: flex; flex-direction: column;">
+              <iframe src="https://viharibattula.github.io/IntegratedPhysicsGuide/"
+                style="width: 100%; height: 100%; min-height: 400px; flex-grow: 1; border: none; border-left: 1px solid var(--border);"
+                title="Integrated Physics Guide Preview"></iframe>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <!-- POSTER SHOWCASE SECTION -->
+    <section id="research-poster" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Visual Research</div>
+          <h2>Myopia Research Showcase</h2>
+          <p>A high-fidelity digital reproduction of the academic poster prepared for upcoming symposia.</p>
+          <button id="toggle-poster" class="poster-toggle-btn" aria-expanded="true" aria-controls="poster-content">
+            <span class="btn-text">Collapse Poster</span>
+            <span class="icon">▼</span>
+          </button>
+        </div>
+
+        <div id="poster-showcase" class="poster-showcase fade-in-up">
+          <div id="poster-content" class="poster-content-wrapper">
+            <div class="poster-inner">
+            <header class="poster-header">
+              <h1>Myopia in the Digital Age: A Crisis for the Connected Generation</h1>
+              <div class="author">Vihari Battula</div>
+              <div class="mentor">Mentored by Prof. Vinay Kodipelly</div>
+              <div class="institute">Mary Institute and St. Louis Country Day School (MICDS)</div>
+            </header>
+
+            <div class="poster-grid">
+              <!-- Column 1 -->
+              <div class="poster-col">
+                <div class="poster-block">
+                  <div class="poster-block-title">Introduction & Motivation</div>
+                  <div class="poster-block-body">
+                    Myopia has reached <strong>epidemic proportions</strong>, driven by lifestyle shifts toward prolonged near-work and digital exposure. Deterioration occurs primarily during <strong>critical developmental windows</strong> of childhood and adolescence.
+                    <br><br>
+                    This research argues for a <strong>preventative approach</strong> centered on behavioral habits and dietary awareness—rather than reliance on future surgical relief.
+                  </div>
+                </div>
+
+                <div class="poster-block">
+                  <div class="poster-block-title">Anatomy of Vision</div>
+                  <div class="poster-block-body">
+                    Understanding myopic damage requires understanding the eye's complex optics:
+                    
+                    <div class="poster-inner-block">
+                      <div class="poster-inner-block-title">The Light Pathway</div>
+                      <div class="poster-inner-block-body">
+                        <ul>
+                          <li><strong>Cornea</strong> — Primary lens; provides ~70% of focusing power.</li>
+                          <li><strong>Crystalline Lens</strong> — Fine-tunes focus via <em>accommodation</em>.</li>
+                          <li><strong>Ciliary Muscles</strong> — Controls lens shape; prolonged contraction during digital use triggers chronic strain.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="poster-inner-block">
+                      <div class="poster-inner-block-title">Neural Conversion</div>
+                      <div class="poster-inner-block-body">
+                        <ul>
+                          <li><strong>Retina</strong> — Converts light into electrical signals via millions of specialized <strong>Photoreceptors</strong>.</li>
+                          <li><strong>Optic Nerve</strong> — Data cable transmitting information from the eye to the brain's visual cortex.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="poster-block">
+                  <div class="poster-block-title">Pathologic Risks of High Myopia</div>
+                  <div class="poster-block-body">
+                    Projected to affect <strong>50% of the population by 2050</strong>, myopia is a structural deformation. High Myopia (&gt; -6.00D) is linked to irreversible conditions:
+                    <ul>
+                      <li><strong>Retinal Detachment</strong> — Elongation stretches tissue until it tears.</li>
+                      <li><strong>Glaucoma</strong> — Drastically higher incidence in myopic patients.</li>
+                      <li><strong>Macular Degeneration</strong> — A leading cause of untreatable blindness.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="poster-col">
+                <div class="poster-block">
+                  <div class="poster-block-title">Functional Awareness</div>
+                  <div class="poster-block-body">
+                    <div class="poster-image-container">
+                      <img src="MyopiaAwareness.png" alt="Myopia Awareness">
+                      <span class="poster-caption">The cumulative impact of digital strain on adolescent ocular health. Sustained screen focus induces physical structural changes.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="poster-block">
+                  <div class="poster-block-title">Visualizing Refractive States</div>
+                  <div class="poster-block-body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                      <div class="poster-image-container" style="margin: 0;">
+                        <img src="normal_eye_diagram.png" alt="Normal Eye">
+                        <span class="poster-caption" style="font-size: 0.65rem;"><strong>Normal</strong><br>Precise Focus</span>
+                      </div>
+                      <div class="poster-image-container" style="margin: 0;">
+                        <img src="myopia_eye_diagram.png" alt="Myopia Eye">
+                        <span class="poster-caption" style="font-size: 0.65rem;"><strong>Myopia</strong><br>Elongated (Near)</span>
+                      </div>
+                      <div class="poster-image-container" style="margin: 0;">
+                        <img src="hyperopia_eye_diagram.png" alt="Hyperopia Eye">
+                        <span class="poster-caption" style="font-size: 0.65rem;"><strong>Hyperopia</strong><br>Shortened (Far)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="poster-block">
+                  <div class="poster-block-title">The Dose-Response Reality</div>
+                  <div class="poster-block-body">
+                    A meta-analysis of <strong>45 studies</strong> quantifies digital ocular risk:
+                    <table class="poster-table">
+                      <thead>
+                        <tr>
+                          <th>Daily Screen Time</th>
+                          <th>Risk Profile</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0–1 Hour</td>
+                          <td>Safety (Insignificant Risk)</td>
+                        </tr>
+                        <tr>
+                          <td>1–4 Hours</td>
+                          <td><strong>Spike</strong> (+21% odds per addtl hr)</td>
+                        </tr>
+                        <tr>
+                          <td>4+ Hours</td>
+                          <td>Saturation (Continued High Risk)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div style="font-size: 0.75rem; margin-top: 10px;">
+                      Note: Smartphone usage surged to 69% by 2023, appearing in children as young as <strong>two years old</strong>.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Column 3 -->
+              <div class="poster-col">
+                <div class="poster-block">
+                  <div class="poster-block-title">Strategic Interventions</div>
+                  <div class="poster-block-body">
+                    <div class="poster-inner-block">
+                      <div class="poster-inner-block-title">Clinical Defense</div>
+                      <div class="poster-inner-block-body">
+                        <ul>
+                          <li><strong>Ortho-K</strong> — Overnight lenses reshape the cornea. Effective at slowing axial growth.</li>
+                          <li><strong>Low-Dose Atropine</strong> — Drops that slow axial elongation with a strong long-term safety profile.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="poster-inner-block">
+                      <div class="poster-inner-block-title">Lifestyle Modification</div>
+                      <div class="poster-inner-block-body">
+                        <ul>
+                          <li><strong>Outdoor Time</strong> — Natural light triggers retinal <strong>Dopamine</strong>, signaling the eye to stop stretching.</li>
+                          <li><strong>The 20-20-20 Rule</strong> — Every 20 mins, look 20 feet away for 20 secs. Essential for relaxing ciliary muscles.</li>
+                          <li><strong>Nutrition</strong> — Low-glycemic diets prevent insulin spikes associated with scleral growth.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="poster-block">
+                  <div class="poster-block-title">The Surgical Fallacy: LASIK</div>
+                  <div class="poster-block-body">
+                    <ul>
+                      <li><strong>Stability Factor:</strong> Must wait until <strong>refractive stability (ages 23–25)</strong>; surgery on an actively changing eye is futile.</li>
+                      <li><strong>Finite Anatomy:</strong> Corneal tissue never grows back. Repeated procedures compromise structural integrity.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="poster-block">
+                  <div class="poster-block-title">Summary & References</div>
+                  <div class="poster-block-body">
+                    Myopia is a structural deformation, not just a prescription number. Axial elongation is <strong>irreversible</strong>. Early prevention is critical. <strong>Protect your sight now.</strong>
+                    
+                    <div class="poster-footer">
+                      <div class="poster-references">
+                        1. Holden. (2016). <i>Prevalence 2050</i>. Ophthalmology.<br>
+                        2. AOA. <i>Computer Vision Syndrome</i>.<br>
+                        3. FDA. (2023). <i>LASIK Project</i>.<br>
+                        4. Tang. (2024). <i>Screen Time Risk</i>. JAMA.<br>
+                        5. Baird. (2020). <i>Myopia Review</i>. Nature.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2509,6 +2973,42 @@
                     Launched this digital portfolio to track academic and extracurricular progress.
                   </div>
                 </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background-color: var(--accent);"></div>
+                  <div class="timeline-title">History Curriculum Guide</div>
+                  <div class="timeline-meta">Ongoing</div>
+                  <div class="timeline-body">
+                    Developing a comprehensive Modern World History curriculum guide focused on global civilizational shifts.
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background-color: var(--accent);"></div>
+                  <div class="timeline-title">Integrated Physics Guide</div>
+                  <div class="timeline-meta">Ongoing</div>
+                  <div class="timeline-body">
+                    Synthesizing core physics concepts into an integrated study guide for high school mastery.
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background-color: var(--accent);"></div>
+                  <div class="timeline-title">4th Int'l Math & Stats Symposium</div>
+                  <div class="timeline-meta">March 27, 2026 (Due)</div>
+                  <div class="timeline-body">
+                    Preparing research findings for the Fourth International Mathematics and Statistics Student Research Symposium.
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-dot" style="background-color: var(--accent);"></div>
+                  <div class="timeline-title">Illinois Poster Symposium</div>
+                  <div class="timeline-meta">April 3, 2026 (Due)</div>
+                  <div class="timeline-body">
+                    Finalizing the presentation poster on "Myopia in the Digital Age" for the state-level competition.
+                  </div>
+                </div>
               </div>
             </div>
           </aside>
@@ -2624,9 +3124,7 @@
           Personal academic portfolio for Vihari Battula, focused on math, STEM, and leadership growth.
         </p>
         <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.9">
-          HTML portfolio template created by Prof. Vinay Kanth Rao Kodipelly
-          for the <a href="https://activestem.org" target="_blank" rel="noopener">Active Learning Institute
-            (ActiveSTEM.org)</a>.
+          HTML portfolio template created by Prof. Vinay Kanth Rao Kodipelly.
         </p>
       </div>
       <div>
@@ -2638,17 +3136,12 @@
             This portfolio was developed under the guidance of
             <strong>Prof. Vinay Kanth Rao Kodipelly</strong>.
           </li>
-          <li style="padding-left: 0;">
-            <a href="https://activestem.org" target="_blank" rel="noopener" class="footer-chip">
-              Active Learning Institute ->
-            </a>
-          </li>
         </ul>
       </div>
     </div>
     <div class="container" style="margin-top: 14px; opacity: 0.85; font-size: 0.9rem">
       &copy; <span class="year"></span> Vihari Battula.
-      Template &copy; <span class="year"></span> Prof. Vinay Kanth Rao Kodipelly, Active Learning Institute (ActiveSTEM.org).
+      Template &copy; <span class="year"></span> Prof. Vinay Kanth Rao Kodipelly.
       MIT
       License.
     </div>
@@ -2842,6 +3335,22 @@
 
       window.addEventListener("scroll", syncHeaderState, { passive: true });
       syncHeaderState();
+
+      // Poster Toggle Logic
+      const posterToggle = document.getElementById("toggle-poster");
+      const posterShowcase = document.getElementById("poster-showcase");
+      const posterBtnText = posterToggle?.querySelector(".btn-text");
+
+      if (posterToggle && posterShowcase) {
+        posterToggle.addEventListener("click", () => {
+          const isCollapsed = posterShowcase.classList.toggle("collapsed");
+          posterToggle.setAttribute("aria-expanded", !isCollapsed);
+
+          if (posterBtnText) {
+            posterBtnText.textContent = isCollapsed ? "Expand Poster" : "Collapse Poster";
+          }
+        });
+      }
     });
   </script>
 
